@@ -1,0 +1,20 @@
+/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/core/WMath.cpp.o: \
+ /home/nithish/.arduino15/packages/esp32/hardware/esp32/3.2.0/cores/esp32/WMath.cpp \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/esp_system/include/esp_system.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/esp_common/include/esp_err.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/esp_common/include/esp_compiler.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/esp_common/include/esp_attr.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/esp_common/include/esp_bit_defs.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/esp_common/include/esp_idf_version.h \
+ /home/nithish/.arduino15/packages/esp32/hardware/esp32/3.2.0/cores/esp32/esp32-hal-log.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/esp_timer/include/esp_timer.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/esp_hw_support/include/esp_etm.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/esp_rom/esp32/include/esp32/rom/ets_sys.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/log/include/esp_log.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/esp_rom/include/esp_rom_sys.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/soc/esp32/include/soc/reset_reasons.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/log/include/esp_log_level.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/log/include/esp_log_color.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/log/include/esp_log_buffer.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/log/include/esp_log_timestamp.h \
+ /home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/esp_hw_support/include/esp_random.h

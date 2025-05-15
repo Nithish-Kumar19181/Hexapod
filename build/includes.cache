@@ -1,0 +1,27 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/home/nithish/.arduino15/packages/esp32/hardware/esp32/3.2.0/cores/esp32"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/home/nithish/.arduino15/packages/esp32/hardware/esp32/3.2.0/variants/esp32"
+  },
+  {
+    "Sourcefile": "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/hexapod.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/ellipse_generation.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/inverse_kinematics.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]
