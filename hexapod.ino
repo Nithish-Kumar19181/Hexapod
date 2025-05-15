@@ -1,5 +1,6 @@
 #include<Arduino.h> 
 #include"inverse_kinematics.h"
+#include"ellipse_generation.h"
 
 void setup() 
 {
