@@ -1,5 +1,6 @@
 # Hexapod
 hexapod locomotion and gait planning
 # Hexapod Orientation 
-![image.png](attachment:1ea344d9-38fe-46e2-afc7-acc2b3876261:image.png)
+![image](https://github.com/user-attachments/assets/ea267125-af49-42ff-9117-793d5460ba56)
+
 
