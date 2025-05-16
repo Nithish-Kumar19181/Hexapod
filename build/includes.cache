@@ -11,6 +11,11 @@
   },
   {
     "Sourcefile": "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/hexapod.ino.cpp",
+    "Include": "SCServo.h",
+    "Includepath": "/home/nithish/Documents/Arduino/libraries/SCServo/src"
+  },
+  {
+    "Sourcefile": "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/hexapod.ino.cpp",
     "Include": "",
     "Includepath": null
   },
@@ -20,7 +25,32 @@
     "Includepath": null
   },
   {
+    "Sourcefile": "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/gait_generation.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
     "Sourcefile": "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/inverse_kinematics.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/home/nithish/Documents/Arduino/libraries/SCServo/src/SCS.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/home/nithish/Documents/Arduino/libraries/SCServo/src/SCSCL.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/home/nithish/Documents/Arduino/libraries/SCServo/src/SCSerial.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/home/nithish/Documents/Arduino/libraries/SCServo/src/SMS_STS.cpp",
     "Include": "",
     "Includepath": null
   }

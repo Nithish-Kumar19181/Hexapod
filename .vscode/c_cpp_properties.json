@@ -5,6 +5,7 @@
       "includePath": [
         "/home/nithish/.arduino15/packages/esp32/hardware/esp32/3.2.0/cores/esp32/**",
         "/home/nithish/.arduino15/packages/esp32/hardware/esp32/3.2.0/variants/esp32/**",
+        "/home/nithish/Documents/Arduino/libraries/SCServo/src/**",
         "/home/nithish/Documents/Arduino/libraries/**",
         "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/**",
         "/home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/**"
@@ -43,11 +44,12 @@
         "-I/home/nithish/.arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/qio_qspi/include",
         "-I/home/nithish/.arduino15/packages/esp32/hardware/esp32/3.2.0/cores/esp32",
         "-I/home/nithish/.arduino15/packages/esp32/hardware/esp32/3.2.0/variants/esp32",
+        "-I/home/nithish/Documents/Arduino/libraries/SCServo/src",
         "@/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/build_opt.h",
         "@/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/file_opts",
-        "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/inverse_kinematics.cpp",
+        "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/hexapod.ino.cpp",
         "-o",
-        "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/inverse_kinematics.cpp.o"
+        "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/hexapod.ino.cpp.o"
       ],
       "defines": [
         "F_CPU=240000000L",

@@ -29,19 +29,4 @@ void ellipseGeneration(float ellipsePoints[][3] , float xStart , float xEnd , fl
         ellipsePoints[i][2] = (strideHeight/2)*(1-cos(2*pi*(outputY[i] - yStart))/(yEnd - yStart)) ; 
     }
 }
-float hexapodParameters[6][2]= {{0.5,0.866} , // leg1
-                                {0,0} , // leg2
-                                {0.5,-0.866} , // leg3
-                                {1.5,-0.866} , // leg4
-                                {2,0} , // leg5
-                                {1.5,0.866}   // leg6
-                                } ;
-
-float lineParameters[6][4]= { {0,0,0,0} , // leg1 
-                              {0,0,0,0} , // leg2 
-                              {0,0,0,0} , // leg3 
-                              {0,0,0,0} , // leg4 
-                              {0,0,0,0} , // leg5 
-                              {0,0,0,0}   // leg6
-                            } ;
 

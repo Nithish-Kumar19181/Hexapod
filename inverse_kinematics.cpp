@@ -45,6 +45,7 @@ bool inverseKinematics(float positionMatrix[] , float jointAngles[3] , float L1 
     float alpha = acos(val_alpha);
     
     float theta2 = -(phi + alpha) ;
+    
     // clamping the values of alpha and beta between -1 and 1
     float val_beta  = (((L2_2) - (d2) + (L3_2)) / (2 * L2 * L3));
     val_beta = fmin(fmax(val_beta, -1.0f), 1.0f);
