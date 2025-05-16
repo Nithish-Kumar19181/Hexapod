@@ -2,19 +2,22 @@
 #include<math.h> 
 #define pi 3.14159265359 
 
+float radToDeg(float radians) ;
+
 // This file implements inverse kinematics, translation, and rotation functions
 // for a 3D position vector.
 
 // float theta1,theta2,theta3 = inverseKinematics(positionMatrix , L1 , L2 , L3)
 // alpha and beta values are clampped between -1 and 1 
 
-// HERE THE ANGLES ARE IN RADIANS CONVERT TO DEGRESS WHEN NEEDED 
+// HERE THE ANGLES ARE IN RADIANS THEN ARE CONVERTER TO DEGREES 
+// the position shiftmatrix shifts the points based on the hexapod dimensions
 
-bool inverseKinematics(float positionMatrix[] , float jointAngles[3] , float L1 , float L2 , float L3)
+bool inverseKinematics(float positionMatrix[3] , float positionShift[2], float jointAngles[3] , float L1 , float L2 , float L3)
 {
-    float x = positionMatrix[0] ;
-    float y = positionMatrix[1] ;
-    float z = positionMatrix[2] ;
+    float x = positionMatrix[0] - positionShift[0] ;
+    float y = positionMatrix[1] - positionShift[1] ;
+    float z = positionMatrix[2] ; // z is the height
 
     float theta1 = atan2(y,x); 
     
@@ -58,12 +61,20 @@ bool inverseKinematics(float positionMatrix[] , float jointAngles[3] , float L1 
         return false;
     }
 
-    jointAngles[0] = theta1 ;
-    jointAngles[1] = theta2 ;
-    jointAngles[2] = theta3 ;
-
+    jointAngles[0] = radToDeg(theta1) ;
+    jointAngles[1] = radToDeg(theta2) ;
+    jointAngles[2] = radToDeg(theta3) ;
+    for(int i=0 ; i<3;i++)
+    {
+        Serial.print("legAngles "+i);
+        Serial.println(jointAngles[i]);
+    }
     return true ;
 
+}
+
+float radToDeg(float radians) {
+    return radians * 180.0 / pi;
 }
 
 //  function to get the translation of X,Y,Z 
