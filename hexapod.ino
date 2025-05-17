@@ -2,6 +2,8 @@
 #include"inverse_kinematics.h"
 #include"ellipse_generation.h"
 #include"gait_generation.h"
+#include"servo_mapping.h"
+
 #include<SCServo.h> 
 
 #define S_RXD 18
@@ -9,24 +11,41 @@
 
 SCSCL sc;
 
+float height = -12.0; // Initial height (negative as per your convention)
+const float maxHeight = -20.0;
+const float minHeight = -12.0;
+float JointAngles[6][3] ;
+float JointAngles_mapped[6][3] ;
+
 void setup() 
 {
     Serial.begin(115200);
     sc.pSerial = &Serial1;  
     Serial1.begin(1000000, SERIAL_8N1, S_RXD, S_TXD);
 }
-float JointAngles[6][3] ;
 
 void loop() 
 {
-    float height = -15.0;
+    handleSerialInput();
     bool success ;
   
     success = Stand(height, JointAngles);
     Serial.println(success) ;
 
     if (success) {
-      moveLeg(7, JointAngles[0]);  // baseServoID = 1
+        moveLeg(3, JointAngles[0]);  // baseServoID = 3
+        Serial.println("Leg 1 moved successfully");
+        moveLeg(18, JointAngles[1]);  // baseServoID = 18
+        Serial.println("Leg 2 moved successfully");
+        moveLeg(15, JointAngles[2]);  // baseServoID = 15
+        Serial.println("Leg 3 moved successfully");
+        moveLeg(12, JointAngles[3]);  // baseServoID = 12
+        Serial.println("Leg 4 moved successfully");
+        moveLeg(9, JointAngles[4]);  // baseServoID = 9
+        Serial.println("Leg 5 moved successfully");
+        moveLeg(6, JointAngles[5]);  // baseServoID = 6
+        Serial.println("Leg 6 moved successfully");
+
     }
 
     else
@@ -34,22 +53,21 @@ void loop()
         Serial.println("The Stand Positions are unreachable for one or more legs.");
     }
   
-    delay(3000);
+    //delay(3000);
   }
-
+// clubbing the 3 joints of a leg by getting the baseID 
 void moveLeg(int baseServoID, float jointAngles[3]) {
 
-    float theta1 = jointAngles[0] ;
-    float theta2 = jointAngles[1] ;
-    float theta3 = jointAngles[2] ;
+    float jointAngles_mapped[3];
+    mapServoAngles(baseServoID, jointAngles, jointAngles_mapped);
+    Serial.print(height);
+    int pos1 = (int)jointAngles_mapped[0]; // Coxa
+    int pos2 = (int)jointAngles_mapped[1]; // Femur
+    int pos3 = (int)jointAngles_mapped[2]; // Tibia
   
-    int pos1 = mapAngleToPulse(theta1);
-    int pos2 = mapAngleToPulse(theta2);
-    int pos3 = mapAngleToPulse(theta3);
-  
-    sc.WritePos(9, pos1, 0, 300); // Coxa
-    sc.WritePos(8, pos2, 0, 300); // Femur
-    sc.WritePos(7, pos3, 0, 300); // Tibia
+    sc.WritePos(baseServoID,     pos1, 0, 300); // Coxa
+    sc.WritePos(baseServoID - 1, pos2, 0, 300); // Femur
+    sc.WritePos(baseServoID - 2, pos3, 0, 300); // Tibia
 
     Serial.print("pos1: ");
     Serial.println(pos1);
@@ -59,7 +77,26 @@ void moveLeg(int baseServoID, float jointAngles[3]) {
     Serial.println(pos3);
   }
 
-  int mapAngleToPulse(float angleDeg) {
-    angleDeg = constrain(angleDeg, 0, 360); 
-    return (int)(angleDeg / 360.0 * 1023.0);
-  }
+  void handleSerialInput() {
+    if (Serial.available()) {
+        char cmd = Serial.read();
+
+        if (cmd == 'h') {
+            if (height > maxHeight) {
+                height -= 0.3;
+                Serial.print("Increased height to: ");
+                Serial.println(-height);
+            } else {
+                Serial.println("Max height reached.");
+            }
+        } else if (cmd == 'd') {
+            if (height < minHeight) {
+                height += 0.3;
+                Serial.print("Decreased height to: ");
+                Serial.println(-height);
+            } else {
+                Serial.println("Min height reached.");
+            }
+        }
+    }
+}

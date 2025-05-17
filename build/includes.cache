@@ -35,6 +35,11 @@
     "Includepath": null
   },
   {
+    "Sourcefile": "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/servo_mapping.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
     "Sourcefile": "/home/nithish/Documents/Arduino/libraries/SCServo/src/SCS.cpp",
     "Include": "",
     "Includepath": null

@@ -20,7 +20,11 @@ bool inverseKinematics(float positionMatrix[3] , float positionShift[2], float j
     float z = positionMatrix[2] ; // z is the height
 
     float theta1 = atan2(y,x); 
-    
+    // theta1 = fmod(theta1,360) ;
+    // if (theta1<0)
+    // {
+    //   theta1 += 360.0 ;  
+    // }
     // square of the params 
     float x2 = pow(x,2) ;
     float y2 = pow(y,2) ;
