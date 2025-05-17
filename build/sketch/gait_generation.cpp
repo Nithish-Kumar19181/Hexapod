@@ -8,30 +8,30 @@
 float LINK1 = 5.0;
 float LINK2 = 9.0;
 float LINK3 = 20.0;
-
-float ShiftParams[6][2] = {{5.25,9.093},
-                           {10.5,0},
-                           {5.25,-9.093},
-                           {-5.25,-9.093},
+// update this to make it dynmic this is only for hexagon dim of 10.5 
+float ShiftParams[6][2] = {{-5.25,9.093},
                            {-10.5,0},
-                           {-5.25,9.093}
+                           {-5.25,-9.093},
+                           {5.25,-9.093},
+                           {10.5,0},
+                           {5.25,9.093}
                         };
 
 bool isValidHeight(float h) 
 {
-    return h >= 12 && h <= 20;  
+    return h >= -20 && h <= -9;  // these are the valid height the bot can make
 }
 
 bool Stand(float height , float legAngles[6][3])
 {    
     bool all_legs_successful = true ;
     // these are the stand coordinates for the hexapod 
-    float StandParams[6][3] = {{11.75, 20.351 ,height},
-                               {23.50,    0   ,height},
-                               {11.75, -20.351,height},
-                               {-11.75,-20.351,height},
-                               {-23.50, 0     ,height},
-                               {-11.75, 20.351,height}
+    float StandParams[6][3] = {{-11.75, 20.351 ,height},
+                               {-23.50,    0   ,height},
+                               {-11.75, -20.351,height},
+                               {11.75,-20.351, height},
+                               {23.50, 0      ,height},
+                               {11.75, 20.351,height}
                             };
     for (int i = 0; i < 6; i++) {
         // ik for each leg 
