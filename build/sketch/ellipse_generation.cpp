@@ -15,19 +15,20 @@ void linspace(float start, float end, int num, float output[])
     }
 }
 
-void ellipseGeneration(float ellipsePoints[][3] , float xStart , float xEnd , float yStart ,float yEnd , float strideHeight , float zShift, int numPoints)
+void ellipseGeneration(float ellipsePoints[][3], float xStart, float xEnd, float yStart, float yEnd, float strideHeight, float zShift, int numPoints)
 {
-    float outputX[numPoints] ; 
-    float outputY[numPoints] ;
+    float outputX[numPoints];  // Fixed size
+    float outputY[numPoints];
 
-    linspace(xStart , xEnd , numPoints , outputX) ;
-    linspace(yStart , yEnd , numPoints , outputY) ; 
+    linspace(xStart, xEnd, numPoints, outputX);
+    linspace(yStart, yEnd, numPoints, outputY);
 
-    for(int i=0 ; i<numPoints ; i++)
-    {
-        ellipsePoints[i][0] = outputX[i] ;
-        ellipsePoints[i][1] = outputY[i] ; 
-        ellipsePoints[i][2] = (strideHeight/2)*(1-cos(2*pi*(outputY[i] - yStart))/(yEnd - yStart)) ; 
+    for (int i = 0; i < numPoints; i++) {
+        ellipsePoints[i][0] = outputX[i];
+        ellipsePoints[i][1] = outputY[i];
+        float phase = ((float)i / (numPoints - 1)) * 2 * pi;
+        ellipsePoints[i][2] = zShift + (strideHeight / 2.0) * (1.0 - cos(phase)); // z = lifted
     }
 }
+
 
