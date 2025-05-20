@@ -45,7 +45,7 @@ void loop() {
     else if (currentMode == WALK) {
         if (WalkGait(height, walkAngles, walkAnglesLine))
         {
-            moveLegWalk(walkAngles) ;
+            moveLegWalk(walkAngles,walkAnglesLine) ;
         } 
         else {
             Serial.println("WalkGait IK failed.");
@@ -73,7 +73,7 @@ void moveLegStand(float jointAngles[6][3]) {
     }
 }
 
-void moveLegWalk(float jointAngles[6][5][3]) 
+void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3]) 
 {
     float jointAngles_mapped[3];
     float jointAngles_mapped_line[3];
@@ -81,9 +81,6 @@ void moveLegWalk(float jointAngles[6][5][3])
     int groupA[3] = {0, 2, 4};
     int groupB[3] = {1, 3, 5};
 
-    // -------------------
-    // First Phase: groupA (0,2,4) swings, groupB supports
-    // -------------------
     for (int step = 0; step < 5; step++) 
     {
         for (int k = 0; k < 3; k++) 
@@ -93,22 +90,27 @@ void moveLegWalk(float jointAngles[6][5][3])
             int baseID = baseIDs[j];
             int baseID_line = baseIDs[i];
 
-            // Optional reversal logic for symmetry
-            if(baseID == 15)
+            if(baseID == 15 || baseID_line == 12)
             {
                 mapServoAngles(baseID, jointAngles[j][4-step], jointAngles_mapped);
+                mapServoAngles(baseID_line, jointAnglesLine[i][4-step], jointAngles_mapped_line);
             }
             else
             {
                 mapServoAngles(baseID, jointAngles[j][step], jointAngles_mapped);
+                mapServoAngles(baseID_line, jointAnglesLine[i][step], jointAngles_mapped_line);
             }
 
             sc.RegWritePos(baseID,     (int)jointAngles_mapped[0], 0, 500);
             sc.RegWritePos(baseID - 1, (int)jointAngles_mapped[1], 0, 500);
             sc.RegWritePos(baseID - 2, (int)jointAngles_mapped[2], 0, 500);
 
+            sc.RegWritePos(baseID_line,     (int)jointAngles_mapped_line[0], 0, 500);
+            sc.RegWritePos(baseID_line - 1, (int)jointAngles_mapped_line[1], 0, 500);
+            sc.RegWritePos(baseID_line - 2, (int)jointAngles_mapped_line[2], 0, 500);
+
             sc.RegWriteAction() ;
-            delay(100);
+            delay(50);
         }
     }
 
@@ -121,22 +123,28 @@ void moveLegWalk(float jointAngles[6][5][3])
             int baseID = baseIDs[j];
             int baseID_line = baseIDs[i];
 
-            // Optional reversal logic for symmetry
-            if(baseID == 15)
+            if(baseID == 15 || baseID_line == 12)
             {
-                mapServoAngles(baseID, jointAngles[j][step], jointAngles_mapped_line);
+                mapServoAngles(baseID, jointAnglesLine[j][step], jointAngles_mapped_line);
+                mapServoAngles(baseID_line, jointAngles[i][step], jointAngles_mapped);
+
             }
             else
             {
-                mapServoAngles(baseID, jointAngles[j][4-step], jointAngles_mapped_line);
+                mapServoAngles(baseID, jointAnglesLine[j][4-step], jointAngles_mapped_line);
+                mapServoAngles(baseID_line, jointAngles[i][4-step], jointAngles_mapped);
             }
 
-            sc.RegWritePos(baseID,     (int)jointAngles_mapped[0], 0, 500);
-            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped[1], 0, 500);
-            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped[2], 0, 500);
+            sc.RegWritePos(baseID,     (int)jointAngles_mapped_line[0], 0, 500);
+            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped_line[1], 0, 500);
+            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped_line[2], 0, 500);
+
+            sc.RegWritePos(baseID_line,     (int)jointAngles_mapped[0], 0, 500);
+            sc.RegWritePos(baseID_line - 1, (int)jointAngles_mapped[1], 0, 500);
+            sc.RegWritePos(baseID_line - 2, (int)jointAngles_mapped[2], 0, 500);
 
             sc.RegWriteAction() ;
-            delay(100);
+            delay(50);
         }
     }
 }
