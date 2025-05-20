@@ -17,7 +17,10 @@ const float maxHeight = -20.0;
 const float minHeight = -14.0;
 
 float JointAngles[6][3];
+float JointAnglesLine[6][3];
 float walkAngles[6][5][3];  
+float walkAnglesLine[6][5][3];  
+
 
 enum BotMode { IDLE, STAND, WALK };
 BotMode currentMode = IDLE;
@@ -33,14 +36,14 @@ void loop() {
 
     if (currentMode == STAND) {
         if (Stand(height, JointAngles)) {
-            moveLeg(JointAngles);
+            moveLegStand(JointAngles);
         } else {
             Serial.println("Stand IK failed for one or more legs.");
         }
     }
 
     else if (currentMode == WALK) {
-        if (WalkGait(height, walkAngles)) 
+        if (WalkGait(height, walkAngles, walkAnglesLine))
         {
             moveLegWalk(walkAngles) ;
         } 
@@ -50,11 +53,9 @@ void loop() {
 
         currentMode = STAND;  // Return to STAND after 1 walk cycle
     }
-
-    delay(50);
 }
 
-void moveLeg(float jointAngles[6][3]) {
+void moveLegStand(float jointAngles[6][3]) {
     float jointAngles_mapped[3];
 
     for (int j = 0; j < 6; j++) 
@@ -73,31 +74,73 @@ void moveLeg(float jointAngles[6][3]) {
 }
 
 void moveLegWalk(float jointAngles[6][5][3]) 
-{   
+{
     float jointAngles_mapped[3];
+    float jointAngles_mapped_line[3];
 
-    for (int i = 0; i < 5; i++) 
-    {   
+    int groupA[3] = {0, 2, 4};
+    int groupB[3] = {1, 3, 5};
+
+    // -------------------
+    // First Phase: groupA (0,2,4) swings, groupB supports
+    // -------------------
+    for (int step = 0; step < 5; step++) 
+    {
+        for (int k = 0; k < 3; k++) 
         {
-            for(int j = 0; j < 6; j++)
+            int i = groupB[k];
+            int j = groupA[k];
+            int baseID = baseIDs[j];
+            int baseID_line = baseIDs[i];
+
+            // Optional reversal logic for symmetry
+            if(baseID == 15)
             {
-                if(baseIDs[j] == 3 || baseIDs[j] == 15 || baseIDs[j] == 9)
-                {
-                    int baseID = baseIDs[j];
-                    mapServoAngles(baseID, jointAngles[j][i], jointAngles_mapped);
-                    
-                    int pos1 = (int)jointAngles_mapped[0]; // Coxa
-                    int pos2 = (int)jointAngles_mapped[1]; // Femur
-                    int pos3 = (int)jointAngles_mapped[2]; // Tibia
-            
-                    sc.WritePos(baseID,     pos1, 0, 300);
-                    sc.WritePos(baseID - 1, pos2, 0, 300);
-                    sc.WritePos(baseID - 2, pos3, 0, 300);
-                }
+                mapServoAngles(baseID, jointAngles[j][4-step], jointAngles_mapped);
             }
-        } delay(500);
+            else
+            {
+                mapServoAngles(baseID, jointAngles[j][step], jointAngles_mapped);
+            }
+
+            sc.RegWritePos(baseID,     (int)jointAngles_mapped[0], 0, 500);
+            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped[1], 0, 500);
+            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped[2], 0, 500);
+
+            sc.RegWriteAction() ;
+            delay(100);
+        }
+    }
+
+    for (int step = 0; step < 5; step++) 
+    {
+        for (int k = 0; k < 3; k++) 
+        {
+            int i = groupB[k];
+            int j = groupA[k];
+            int baseID = baseIDs[j];
+            int baseID_line = baseIDs[i];
+
+            // Optional reversal logic for symmetry
+            if(baseID == 15)
+            {
+                mapServoAngles(baseID, jointAngles[j][step], jointAngles_mapped_line);
+            }
+            else
+            {
+                mapServoAngles(baseID, jointAngles[j][4-step], jointAngles_mapped_line);
+            }
+
+            sc.RegWritePos(baseID,     (int)jointAngles_mapped[0], 0, 500);
+            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped[1], 0, 500);
+            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped[2], 0, 500);
+
+            sc.RegWriteAction() ;
+            delay(100);
+        }
     }
 }
+
 
 void handleSerialInput() {
     if (Serial.available()) {
