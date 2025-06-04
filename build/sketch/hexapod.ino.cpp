@@ -12,7 +12,6 @@
 SCSCL sc;
 
 int baseIDs[6] = {3, 18, 15, 12, 9, 6};
-
 float height = -14.0;
 const float maxHeight = -20.0;
 const float minHeight = -14.0;
@@ -26,17 +25,17 @@ float walkAnglesLine[6][5][3];
 enum BotMode { IDLE, STAND, WALK };
 BotMode currentMode = IDLE;
 
-#line 28 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 27 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void setup();
-#line 34 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 33 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void loop();
-#line 58 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 57 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void moveLegStand(float jointAngles[6][3]);
-#line 76 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 75 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3]);
-#line 153 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 152 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void handleSerialInput();
-#line 28 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 27 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void setup() {
     Serial.begin(115200);
     sc.pSerial = &Serial1;
@@ -92,7 +91,7 @@ void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3])
 
     int groupA[3] = {0, 2, 4};
     int groupB[3] = {1, 3, 5};
-
+    
     for (int step = 0; step < 5; step++) 
     {
         for (int k = 0; k < 3; k++) 
@@ -105,12 +104,12 @@ void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3])
             if(baseID == 15 || baseID_line == 12)
             {
                 mapServoAngles(baseID, jointAngles[j][4-step], jointAngles_mapped);
-                mapServoAngles(baseID_line, jointAnglesLine[i][4-step], jointAngles_mapped_line);
+                mapServoAngles(baseID_line, jointAnglesLine[i][step], jointAngles_mapped_line);
             }
             else
             {
                 mapServoAngles(baseID, jointAngles[j][step], jointAngles_mapped);
-                mapServoAngles(baseID_line, jointAnglesLine[i][step], jointAngles_mapped_line);
+                mapServoAngles(baseID_line, jointAnglesLine[i][4-step], jointAngles_mapped_line);
             }
 
             sc.RegWritePos(baseID,     (int)jointAngles_mapped[0], 0, 500);
@@ -138,13 +137,13 @@ void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3])
             if(baseID == 15 || baseID_line == 12)
             {
                 mapServoAngles(baseID, jointAnglesLine[j][step], jointAngles_mapped_line);
-                mapServoAngles(baseID_line, jointAngles[i][step], jointAngles_mapped);
+                mapServoAngles(baseID_line, jointAngles[i][4-step], jointAngles_mapped);
 
             }
             else
             {
                 mapServoAngles(baseID, jointAnglesLine[j][4-step], jointAngles_mapped_line);
-                mapServoAngles(baseID_line, jointAngles[i][4-step], jointAngles_mapped);
+                mapServoAngles(baseID_line, jointAngles[i][step], jointAngles_mapped);
             }
 
             sc.RegWritePos(baseID,     (int)jointAngles_mapped_line[0], 0, 500);

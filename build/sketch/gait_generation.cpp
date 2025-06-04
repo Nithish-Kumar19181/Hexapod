@@ -30,12 +30,12 @@ bool Stand(float height , float legAngles[6][3])
 {    
     bool all_legs_successful = true ;
     // these are the stand coordinates for the hexapod 
-    float StandParams[6][3] = { {-8.75,   15.155, height},
-                                {-17.5,    0,   height},
-                                {-8.75,  -15.155, height},
-                                { 8.75, -15.155, height},
-                                {17.5,   0   ,   height},
-                                {8.75,  15.155, height} 
+    float StandParams[6][3] = { { -10.0,   17.3205, height },
+                                { -20.0,    0.0,    height },
+                                { -10.0,  -17.3205, height },
+                                {  10.0,  -17.3205, height },
+                                {  20.0,    0.0,    height },
+                                {  10.0,   17.3205, height } 
   };
 
     for (int i = 0; i < 6; i++) {
@@ -53,19 +53,19 @@ bool Stand(float height , float legAngles[6][3])
 bool WalkGait(float height , float legAngles[6][5][3] , float legAnglesLine[6][5][3]) 
 {
     bool all_legs_successful = true;
-    const int stride = 10;
+    const int stride = 8;
     const int numPoints = 5;
-    const float strideHeight = 6.0;
+    const float strideHeight = 5.5;
 
     float ellipsePoints[6][numPoints][3];
     float LinePoints[6][numPoints][3];
 
-    float StandParams[6][3] = { {-8.75,   15.155, height},
-                                {-17.5,    0,   height},
-                                {-8.75,  -15.155, height},
-                                { 8.75, -15.155, height},
-                                {17.5,   0   ,   height},
-                                {8.75,  15.155, height} 
+    float StandParams[6][3] = { { -10.0,   17.3205, height },
+                                { -20.0,    0.0,    height },
+                                { -10.0,  -17.3205, height },
+                                {  10.0,  -17.3205, height },
+                                {  20.0,    0.0,    height },
+                                {  10.0,   17.3205, height }
                             };
 
     for (int i = 0; i < 6; i++) {
@@ -74,8 +74,8 @@ bool WalkGait(float height , float legAngles[6][5][3] , float legAnglesLine[6][5
 
         float xStart = xMid;
         float xEnd   = xMid;
-        float yStart = y - (stride / 2.0) ; 
-        float yEnd   = y + (stride / 2.0) ;
+        float yStart = y - (stride / 2) ; 
+        float yEnd   = y + (stride / 2) ;
         ellipseGeneration(ellipsePoints[i], xStart, xEnd, yStart, yEnd, strideHeight, height, numPoints);
         ellipseGeneration(LinePoints[i], xStart, xEnd, yStart, yEnd, 0, height, numPoints);
     }
