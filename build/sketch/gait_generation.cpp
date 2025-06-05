@@ -10,8 +10,6 @@ float LINK1 = 5.0;
 float LINK2 = 9.0;
 float LINK3 = 20.0;
 
-
-
 // update this to make it dynmic this is only for hexagon dim of 10.5 
 float ShiftParams[6][2] = {{-5.25,9.093},
                            {-10.5,0},
@@ -68,7 +66,8 @@ bool WalkGait(float height , float legAngles[6][5][3] , float legAnglesLine[6][5
                                 {  10.0,   17.3205, height }
                             };
 
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 6; i++) 
+    {
         float xMid = StandParams[i][0];
         float y    = StandParams[i][1];
 
@@ -78,10 +77,56 @@ bool WalkGait(float height , float legAngles[6][5][3] , float legAnglesLine[6][5
         float yEnd   = y + (stride / 2) ;
         ellipseGeneration(ellipsePoints[i], xStart, xEnd, yStart, yEnd, strideHeight, height, numPoints);
         ellipseGeneration(LinePoints[i], xStart, xEnd, yStart, yEnd, 0, height, numPoints);
-    }
-
-    for (int i = 0; i < 6; i++) {
+        
         for (int j = 0; j < numPoints; j++) {
+            bool success = inverseKinematics(ellipsePoints[i][j], ShiftParams[i], legAngles[i][j], LINK1, LINK2, LINK3);
+            inverseKinematics(LinePoints[i][j], ShiftParams[i], legAnglesLine[i][j], LINK1, LINK2, LINK3);
+            if (!success) {
+                Serial.print("IK failed for leg ");
+                Serial.print(i);
+                Serial.print(" at step ");
+                Serial.println(j);
+                all_legs_successful = false;
+            }
+        }
+    }
+    
+return all_legs_successful;
+
+}
+
+bool RotateHexa(float height , float RotateAngle , float legAngles[6][5][3] , float legAnglesLine[6][5][3])
+{
+    bool all_legs_successful = true;
+    const int numPoints = 5;
+    const float strideHeight = 5.5;
+    float ellipsePoints[6][numPoints][3];
+    float LinePoints[6][numPoints][3];
+
+
+    float StandParams[6][3] = { { -10.0,   17.3205, height },
+                                { -20.0,    0.0,    height },
+                                { -10.0,  -17.3205, height },
+                                {  10.0,  -17.3205, height },
+                                {  20.0,    0.0,    height },
+                                {  10.0,   17.3205, height }
+                              };
+    
+    for (int i = 0; i < 6; i++) 
+    {
+        float xStart = StandParams[i][0];
+        float yStart = StandParams[i][1];
+
+        RotationZ(StandParams[i], RotateAngle);
+
+        float xEnd   = StandParams[i][0];
+        float yEnd   = StandParams[i][1];
+
+        ellipseGeneration(ellipsePoints[i], xStart, xEnd, yStart, yEnd, strideHeight, height, numPoints);
+        ellipseGeneration(LinePoints[i], xStart, xEnd, yStart, yEnd, 0, height, numPoints);
+
+        for (int j = 0; j < numPoints; j++) 
+        {
             bool success = inverseKinematics(ellipsePoints[i][j], ShiftParams[i], legAngles[i][j], LINK1, LINK2, LINK3);
             inverseKinematics(LinePoints[i][j], ShiftParams[i], legAnglesLine[i][j], LINK1, LINK2, LINK3);
             if (!success) {
@@ -95,5 +140,4 @@ bool WalkGait(float height , float legAngles[6][5][3] , float legAnglesLine[6][5
     }
 
     return all_legs_successful;
-
 }

@@ -15,27 +15,30 @@ int baseIDs[6] = {3, 18, 15, 12, 9, 6};
 float height = -14.0;
 const float maxHeight = -20.0;
 const float minHeight = -14.0;
+float RotateAngle = 0.0f; 
 
 float JointAngles[6][3];
 float JointAnglesLine[6][3];
 float walkAngles[6][5][3];  
-float walkAnglesLine[6][5][3];  
+float walkAnglesLine[6][5][3]; 
+float rotateAngles[6][5][3] ; 
+float rotateAnglesLine[6][5][3] ;
 
 
-enum BotMode { IDLE, STAND, WALK };
+enum BotMode { IDLE, STAND, WALK, ROTATE };
 BotMode currentMode = IDLE;
 
-#line 27 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 30 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void setup();
-#line 33 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 36 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void loop();
-#line 57 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 70 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void moveLegStand(float jointAngles[6][3]);
-#line 75 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 88 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3]);
-#line 152 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 165 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void handleSerialInput();
-#line 27 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 30 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void setup() {
     Serial.begin(115200);
     sc.pSerial = &Serial1;
@@ -56,16 +59,26 @@ void loop() {
     else if (currentMode == WALK) {
         if (WalkGait(height, walkAngles, walkAnglesLine))
         {
-            moveLegWalk(walkAngles,walkAnglesLine) ;
+            moveLegWalk(walkAngles,walkAnglesLine);
         } 
         else {
             Serial.println("WalkGait IK failed.");
         }
+        currentMode = STAND;  // Return to STAND after 1 walk cycle
+    }
 
+    else if (currentMode == ROTATE) {
+        if (RotateHexa(height , RotateAngle , rotateAngles , rotateAnglesLine))
+        {
+            Serial.println(RotateAngle) ;
+            moveLegWalk(rotateAngles,rotateAnglesLine);
+        } 
+        else {
+            Serial.println("Rotate IK failed.");
+        }
         currentMode = STAND;  // Return to STAND after 1 walk cycle
     }
 }
-
 void moveLegStand(float jointAngles[6][3]) {
     float jointAngles_mapped[3];
 
@@ -166,7 +179,7 @@ void handleSerialInput() {
         char cmd = Serial.read();
 
         switch (cmd) {
-            case '1':
+            case 's':
                 currentMode = STAND;
                 Serial.println("Mode: STAND");
                 break;
@@ -179,6 +192,19 @@ void handleSerialInput() {
                     Serial.println("Start walking only from STAND mode.");
                 }
                 break;
+
+            case 'r':
+            if (currentMode == STAND) {
+                currentMode = ROTATE;
+                if(Serial.available()) {
+                    RotateAngle = Serial.parseFloat();
+                }
+                float RotateAngle = Serial.parseFloat();
+                Serial.println("Mode: Rotate (Tripod gait)");
+            } else {
+                Serial.println("Start rotating only from STAND mode.");
+            }
+            break;
 
             case 'h':
                 if (currentMode == STAND && height > maxHeight) {

@@ -96,7 +96,7 @@ void RotationZ(float positionMatrix[] , float thetaz)
                              {sin(thetaz) , cos(thetaz) , 0},
                              {0           , 0           , 1}
                             } ;
-    float result[3] ;
+    float result[3] = {0.0f, 0.0f, 0.0f} ;
 
     for(int i=0 ; i<3 ; i++)
     {
