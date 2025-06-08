@@ -47,7 +47,7 @@ bool Stand(float height , float legAngles[6][3])
     return all_legs_successful;
 }
 
-bool WalkGait(float height , float legAngles[6][5][3] , float legAnglesLine[6][5][3]) 
+bool WalkGait(float height , float legAngles[6][5][3] , float legAnglesLine[6][5][3], float Angle) 
 {
     bool all_legs_successful = true;
     const int stride = 8;
@@ -74,6 +74,17 @@ bool WalkGait(float height , float legAngles[6][5][3] , float legAnglesLine[6][5
         float xEnd   = xMid;
         float yStart = y - (stride / 2) ; 
         float yEnd   = y + (stride / 2) ;
+        float startArr[] = { xStart, yStart, height };
+        float EndArr[]   = { xEnd, yEnd, height };
+
+        RotationZ( startArr,Angle) ;
+        RotationZ( EndArr,Angle) ;
+        
+        xStart = startArr[0];
+        xEnd   = EndArr[0];
+        yStart = startArr[1];
+        yEnd   = EndArr[1];
+
         ellipseGeneration(ellipsePoints[i], xStart, xEnd, yStart, yEnd, strideHeight, height, numPoints);
         ellipseGeneration(LinePoints[i], xStart, xEnd, yStart, yEnd, 0, height, numPoints);
         
