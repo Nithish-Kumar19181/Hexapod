@@ -1,0 +1,53 @@
+[1.622s] Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter:/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection:/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping:/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2 -- -j12 -l12
+[1.772s] [ 90%] Built target sllidar_node
+[1.773s] [100%] Built target sllidar_client
+[1.787s] Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter:/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection:/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping:/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2 -- -j12 -l12
+[1.791s] Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter:/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection:/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping:/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2
+[1.826s] -- Install configuration: ""
+[1.827s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch
+[1.827s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_c1_launch.py
+[1.827s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_launch.py
+[1.827s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2_launch.py
+[1.827s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_t1_launch.py
+[1.827s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a3_launch.py
+[1.829s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a1_launch.py
+[1.830s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a3_launch.py
+[1.831s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s3_launch.py
+[1.831s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_t1_launch.py
+[1.831s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m12_launch.py
+[1.831s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m7_launch.py
+[1.831s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m8_launch.py
+[1.831s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m8_launch.py
+[1.832s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_tcp_launch.py
+[1.832s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_launch.py
+[1.832s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m12_launch .py
+[1.832s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2_launch.py
+[1.832s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s3_launch.py
+[1.832s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_tcp_launch.py
+[1.832s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m7_launch.py
+[1.832s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_c1_launch.py
+[1.832s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2e_launch.py
+[1.832s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a1_launch.py
+[1.833s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2e_launch.py
+[1.833s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/rviz
+[1.833s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/rviz/sllidar_ros2.rviz
+[1.833s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/lib/sllidar_ros2/sllidar_node
+[1.833s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/lib/sllidar_ros2/sllidar_client
+[1.833s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/ament_index/resource_index/package_run_dependencies/sllidar_ros2
+[1.833s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/ament_index/resource_index/parent_prefix_path/sllidar_ros2
+[1.833s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.sh
+[1.833s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.dsv
+[1.834s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/environment/path.sh
+[1.834s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/environment/path.dsv
+[1.834s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/local_setup.bash
+[1.834s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/local_setup.sh
+[1.835s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/local_setup.zsh
+[1.835s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/local_setup.dsv
+[1.835s] -- Installing: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/package.dsv
+[1.835s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/ament_index/resource_index/packages/sllidar_ros2
+[1.835s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.835s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.835s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config.cmake
+[1.835s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config-version.cmake
+[1.835s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/package.xml
+[1.906s] Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter:/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection:/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping:/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller:/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2

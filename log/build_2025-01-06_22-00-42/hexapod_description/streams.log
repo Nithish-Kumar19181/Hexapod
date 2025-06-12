@@ -1,0 +1,27 @@
+[0.373s] Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/hexapod_description -- -j12 -l12
+[1.353s] Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/hexapod_description -- -j12 -l12
+[1.357s] Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/hexapod_description
+[1.367s] -- Install configuration: ""
+[1.369s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/launch
+[1.369s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/launch/display.launch.py
+[1.369s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/launch/gazebo.launch.py
+[1.369s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/urdf
+[1.369s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/urdf/hexapod_robot.urdf.xacro
+[1.369s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/rviz
+[1.370s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/rviz/display.rviz
+[1.373s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/ament_index/resource_index/package_run_dependencies/hexapod_description
+[1.375s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/ament_index/resource_index/parent_prefix_path/hexapod_description
+[1.376s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/environment/ament_prefix_path.sh
+[1.377s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/environment/ament_prefix_path.dsv
+[1.378s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/environment/path.sh
+[1.379s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/environment/path.dsv
+[1.379s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/local_setup.bash
+[1.379s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/local_setup.sh
+[1.379s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/local_setup.zsh
+[1.380s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/local_setup.dsv
+[1.380s] -- Installing: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/package.dsv
+[1.381s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/ament_index/resource_index/packages/hexapod_description
+[1.381s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/cmake/hexapod_descriptionConfig.cmake
+[1.381s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/cmake/hexapod_descriptionConfig-version.cmake
+[1.381s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/package.xml
+[1.450s] Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/hexapod_description

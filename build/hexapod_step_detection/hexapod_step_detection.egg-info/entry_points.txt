@@ -1,0 +1,2 @@
+[console_scripts]
+publish_gyro = hexapod_step_detection.publish_gyro:main

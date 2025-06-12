@@ -1,0 +1,48 @@
+[0.199s] Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware -- -j12 -l12
+[0.600s] Built target ament_cmake_python_copy_hexapod_firmware
+[0.600s] running egg_info
+[0.600s] writing hexapod_firmware.egg-info/PKG-INFO
+[0.600s] writing dependency_links to hexapod_firmware.egg-info/dependency_links.txt
+[0.600s] writing top-level names to hexapod_firmware.egg-info/top_level.txt
+[0.600s] reading manifest file 'hexapod_firmware.egg-info/SOURCES.txt'
+[0.600s] writing manifest file 'hexapod_firmware.egg-info/SOURCES.txt'
+[0.601s] Built target ament_cmake_python_build_hexapod_firmware_egg
+[0.613s] Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware -- -j12 -l12
+[0.614s] Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware
+[0.658s] -- Install configuration: ""
+[0.658s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/environment/pythonpath.sh
+[0.658s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/environment/pythonpath.dsv
+[0.658s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware-0.0.0-py3.10.egg-info
+[0.658s] -- Installing: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware-0.0.0-py3.10.egg-info/top_level.txt
+[0.658s] -- Installing: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware-0.0.0-py3.10.egg-info/SOURCES.txt
+[0.658s] -- Installing: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware-0.0.0-py3.10.egg-info/dependency_links.txt
+[0.658s] -- Installing: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware-0.0.0-py3.10.egg-info/PKG-INFO
+[0.658s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware
+[0.658s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware/simple_gyro_transmitter.py
+[0.658s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware/mpu6050_driver.py
+[0.658s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware/info_transmitter.py
+[0.658s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware/__init__.py
+[0.659s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware/simple_serial_transmitter.py
+[0.663s] Listing '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware'...
+[0.670s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib/hexapod_firmware/simple_serial_transmitter.py
+[0.670s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib/hexapod_firmware/mpu6050_driver.py
+[0.670s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib/hexapod_firmware/simple_gyro_transmitter.py
+[0.670s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib/hexapod_firmware/info_transmitter.py
+[0.670s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/launch
+[0.671s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/launch/move_hexapod.launch.py
+[0.671s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/ament_index/resource_index/package_run_dependencies/hexapod_firmware
+[0.671s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/ament_index/resource_index/parent_prefix_path/hexapod_firmware
+[0.671s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/environment/ament_prefix_path.sh
+[0.672s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/environment/ament_prefix_path.dsv
+[0.672s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/environment/path.sh
+[0.672s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/environment/path.dsv
+[0.672s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/local_setup.bash
+[0.672s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/local_setup.sh
+[0.672s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/local_setup.zsh
+[0.673s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/local_setup.dsv
+[0.673s] -- Installing: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.dsv
+[0.673s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/ament_index/resource_index/packages/hexapod_firmware
+[0.673s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/cmake/hexapod_firmwareConfig.cmake
+[0.673s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/cmake/hexapod_firmwareConfig-version.cmake
+[0.673s] -- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.xml
+[0.693s] Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware

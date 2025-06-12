@@ -1,0 +1,44 @@
+Built target ament_cmake_python_copy_hexapod_firmware
+running egg_info
+writing hexapod_firmware.egg-info/PKG-INFO
+writing dependency_links to hexapod_firmware.egg-info/dependency_links.txt
+writing top-level names to hexapod_firmware.egg-info/top_level.txt
+reading manifest file 'hexapod_firmware.egg-info/SOURCES.txt'
+writing manifest file 'hexapod_firmware.egg-info/SOURCES.txt'
+Built target ament_cmake_python_build_hexapod_firmware_egg
+-- Install configuration: ""
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/environment/pythonpath.sh
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/environment/pythonpath.dsv
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware-0.0.0-py3.10.egg-info
+-- Installing: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware-0.0.0-py3.10.egg-info/top_level.txt
+-- Installing: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware-0.0.0-py3.10.egg-info/SOURCES.txt
+-- Installing: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware-0.0.0-py3.10.egg-info/dependency_links.txt
+-- Installing: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware-0.0.0-py3.10.egg-info/PKG-INFO
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware/simple_gyro_transmitter.py
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware/mpu6050_driver.py
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware/info_transmitter.py
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware/__init__.py
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware/simple_serial_transmitter.py
+Listing '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages/hexapod_firmware'...
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib/hexapod_firmware/simple_serial_transmitter.py
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib/hexapod_firmware/mpu6050_driver.py
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib/hexapod_firmware/simple_gyro_transmitter.py
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib/hexapod_firmware/info_transmitter.py
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/launch
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/launch/move_hexapod.launch.py
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/ament_index/resource_index/package_run_dependencies/hexapod_firmware
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/ament_index/resource_index/parent_prefix_path/hexapod_firmware
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/environment/ament_prefix_path.sh
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/environment/path.sh
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/environment/path.dsv
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/local_setup.bash
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/local_setup.sh
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/local_setup.zsh
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/local_setup.dsv
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.dsv
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/ament_index/resource_index/packages/hexapod_firmware
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/cmake/hexapod_firmwareConfig.cmake
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/cmake/hexapod_firmwareConfig-version.cmake
+-- Up-to-date: /home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.xml

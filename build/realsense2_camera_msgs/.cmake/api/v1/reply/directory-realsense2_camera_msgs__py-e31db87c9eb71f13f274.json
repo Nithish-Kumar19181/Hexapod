@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "realsense2_camera_msgs__py",
+		"source" : "/home/nithish/slam_hexapod_5th_jan/build/realsense2_camera_msgs/realsense2_camera_msgs__py"
+	}
+}

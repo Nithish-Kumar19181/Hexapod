@@ -1,0 +1,748 @@
+[0.062s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.062s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7f6583e5e500>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f6583f57af0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f6583f57af0>>, mixin_verb=('build',))
+[0.083s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.083s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.083s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.083s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.083s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.083s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.083s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/nithish/slam_hexapod_5th_jan'
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extension 'ignore'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extension 'ignore_ament_install'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extensions ['colcon_pkg']
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extension 'colcon_pkg'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extensions ['colcon_meta']
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extension 'colcon_meta'
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extensions ['ros']
+[0.098s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_controller) by extension 'ros'
+[0.100s] DEBUG:colcon.colcon_core.package_identification:Package 'src/hexapod_controller' with type 'ros.ament_python' and name 'hexapod_controller'
+[0.100s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_description) by extensions ['ignore', 'ignore_ament_install']
+[0.100s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_description) by extension 'ignore'
+[0.100s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_description) by extension 'ignore_ament_install'
+[0.100s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_description) by extensions ['colcon_pkg']
+[0.100s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_description) by extension 'colcon_pkg'
+[0.100s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_description) by extensions ['colcon_meta']
+[0.100s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_description) by extension 'colcon_meta'
+[0.100s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_description) by extensions ['ros']
+[0.100s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_description) by extension 'ros'
+[0.100s] DEBUG:colcon.colcon_core.package_identification:Package 'src/hexapod_description' with type 'ros.ament_cmake' and name 'hexapod_description'
+[0.100s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_firmware) by extensions ['ignore', 'ignore_ament_install']
+[0.100s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_firmware) by extension 'ignore'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_firmware) by extension 'ignore_ament_install'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_firmware) by extensions ['colcon_pkg']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_firmware) by extension 'colcon_pkg'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_firmware) by extensions ['colcon_meta']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_firmware) by extension 'colcon_meta'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_firmware) by extensions ['ros']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_firmware) by extension 'ros'
+[0.101s] DEBUG:colcon.colcon_core.package_identification:Package 'src/hexapod_firmware' with type 'ros.ament_cmake' and name 'hexapod_firmware'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_mapping) by extensions ['ignore', 'ignore_ament_install']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_mapping) by extension 'ignore'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_mapping) by extension 'ignore_ament_install'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_mapping) by extensions ['colcon_pkg']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_mapping) by extension 'colcon_pkg'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_mapping) by extensions ['colcon_meta']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_mapping) by extension 'colcon_meta'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_mapping) by extensions ['ros']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_mapping) by extension 'ros'
+[0.102s] DEBUG:colcon.colcon_core.package_identification:Package 'src/hexapod_mapping' with type 'ros.ament_python' and name 'hexapod_mapping'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_step_detection) by extensions ['ignore', 'ignore_ament_install']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_step_detection) by extension 'ignore'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_step_detection) by extension 'ignore_ament_install'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_step_detection) by extensions ['colcon_pkg']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_step_detection) by extension 'colcon_pkg'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_step_detection) by extensions ['colcon_meta']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_step_detection) by extension 'colcon_meta'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_step_detection) by extensions ['ros']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/hexapod_step_detection) by extension 'ros'
+[0.102s] DEBUG:colcon.colcon_core.package_identification:Package 'src/hexapod_step_detection' with type 'ros.ament_python' and name 'hexapod_step_detection'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_scan_converter) by extensions ['ignore', 'ignore_ament_install']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_scan_converter) by extension 'ignore'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_scan_converter) by extension 'ignore_ament_install'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_scan_converter) by extensions ['colcon_pkg']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_scan_converter) by extension 'colcon_pkg'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_scan_converter) by extensions ['colcon_meta']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_scan_converter) by extension 'colcon_meta'
+[0.103s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_scan_converter) by extensions ['ros']
+[0.103s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_scan_converter) by extension 'ros'
+[0.103s] DEBUG:colcon.colcon_core.package_identification:Package 'src/laser_scan_converter' with type 'ros.ament_python' and name 'laser_scan_converter'
+[0.103s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera) by extensions ['ignore', 'ignore_ament_install']
+[0.103s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera) by extension 'ignore'
+[0.103s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera) by extension 'ignore_ament_install'
+[0.103s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera) by extensions ['colcon_pkg']
+[0.103s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera) by extension 'colcon_pkg'
+[0.103s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera) by extensions ['colcon_meta']
+[0.103s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera) by extension 'colcon_meta'
+[0.103s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera) by extensions ['ros']
+[0.103s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera) by extension 'ros'
+[0.106s] DEBUG:colcon.colcon_core.package_identification:Package 'src/realsense2_camera' with type 'ros.ament_cmake' and name 'realsense2_camera'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera_msgs) by extension 'ignore'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera_msgs) by extension 'ignore_ament_install'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera_msgs) by extensions ['colcon_pkg']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera_msgs) by extension 'colcon_pkg'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera_msgs) by extensions ['colcon_meta']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera_msgs) by extension 'colcon_meta'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera_msgs) by extensions ['ros']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_camera_msgs) by extension 'ros'
+[0.107s] DEBUG:colcon.colcon_core.package_identification:Package 'src/realsense2_camera_msgs' with type 'ros.ament_cmake' and name 'realsense2_camera_msgs'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_description) by extensions ['ignore', 'ignore_ament_install']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_description) by extension 'ignore'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_description) by extension 'ignore_ament_install'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_description) by extensions ['colcon_pkg']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_description) by extension 'colcon_pkg'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_description) by extensions ['colcon_meta']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_description) by extension 'colcon_meta'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_description) by extensions ['ros']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense2_description) by extension 'ros'
+[0.108s] DEBUG:colcon.colcon_core.package_identification:Package 'src/realsense2_description' with type 'ros.ament_cmake' and name 'realsense2_description'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/rtabmap_examples) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/rtabmap_examples) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/rtabmap_examples) by extension 'ignore_ament_install'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/rtabmap_examples) by extensions ['colcon_pkg']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/rtabmap_examples) by extension 'colcon_pkg'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/rtabmap_examples) by extensions ['colcon_meta']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/rtabmap_examples) by extension 'colcon_meta'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/rtabmap_examples) by extensions ['ros']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/rtabmap_examples) by extension 'ros'
+[0.108s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rtabmap_examples' with type 'ros.ament_cmake' and name 'rtabmap_examples'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extensions ['ignore', 'ignore_ament_install']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extension 'ignore'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extension 'ignore_ament_install'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extensions ['colcon_pkg']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extension 'colcon_pkg'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extensions ['colcon_meta']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extension 'colcon_meta'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extensions ['ros']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extension 'ros'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extensions ['cmake', 'python']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extension 'cmake'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extension 'python'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extensions ['python_setup_py']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/scripts) by extension 'python_setup_py'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ignore'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ignore_ament_install'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['colcon_pkg']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'colcon_pkg'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['colcon_meta']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'colcon_meta'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['ros']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ros'
+[0.109s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sllidar_ros2' with type 'ros.ament_cmake' and name 'sllidar_ros2'
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.121s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.121s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.122s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 268 installed packages in /opt/ros/humble
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'cmake_args' from command line to 'None'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'cmake_target' from command line to 'None'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.141s] DEBUG:colcon.colcon_core.verb:Building package 'hexapod_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nithish/slam_hexapod_5th_jan/build/hexapod_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller', 'merge_install': False, 'path': '/home/nithish/slam_hexapod_5th_jan/src/hexapod_controller', 'symlink_install': False, 'test_result_base': None}
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_description' build argument 'cmake_args' from command line to 'None'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_description' build argument 'cmake_target' from command line to 'None'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.141s] Level 5:colcon.colcon_core.verb:set package 'hexapod_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.142s] DEBUG:colcon.colcon_core.verb:Building package 'hexapod_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nithish/slam_hexapod_5th_jan/build/hexapod_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description', 'merge_install': False, 'path': '/home/nithish/slam_hexapod_5th_jan/src/hexapod_description', 'symlink_install': False, 'test_result_base': None}
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_firmware' build argument 'cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_firmware' build argument 'cmake_target' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_firmware' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_firmware' build argument 'cmake_clean_cache' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_firmware' build argument 'cmake_clean_first' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_firmware' build argument 'cmake_force_configure' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_firmware' build argument 'ament_cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_firmware' build argument 'catkin_cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_firmware' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.142s] DEBUG:colcon.colcon_core.verb:Building package 'hexapod_firmware' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware', 'merge_install': False, 'path': '/home/nithish/slam_hexapod_5th_jan/src/hexapod_firmware', 'symlink_install': False, 'test_result_base': None}
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_mapping' build argument 'cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_mapping' build argument 'cmake_target' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_mapping' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_mapping' build argument 'cmake_clean_cache' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_mapping' build argument 'cmake_clean_first' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_mapping' build argument 'cmake_force_configure' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_mapping' build argument 'ament_cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_mapping' build argument 'catkin_cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_mapping' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.142s] DEBUG:colcon.colcon_core.verb:Building package 'hexapod_mapping' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping', 'merge_install': False, 'path': '/home/nithish/slam_hexapod_5th_jan/src/hexapod_mapping', 'symlink_install': False, 'test_result_base': None}
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_step_detection' build argument 'cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_step_detection' build argument 'cmake_target' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_step_detection' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_step_detection' build argument 'cmake_clean_cache' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_step_detection' build argument 'cmake_clean_first' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_step_detection' build argument 'cmake_force_configure' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_step_detection' build argument 'ament_cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_step_detection' build argument 'catkin_cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'hexapod_step_detection' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.142s] DEBUG:colcon.colcon_core.verb:Building package 'hexapod_step_detection' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection', 'merge_install': False, 'path': '/home/nithish/slam_hexapod_5th_jan/src/hexapod_step_detection', 'symlink_install': False, 'test_result_base': None}
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'laser_scan_converter' build argument 'cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'laser_scan_converter' build argument 'cmake_target' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'laser_scan_converter' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'laser_scan_converter' build argument 'cmake_clean_cache' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'laser_scan_converter' build argument 'cmake_clean_first' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'laser_scan_converter' build argument 'cmake_force_configure' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'laser_scan_converter' build argument 'ament_cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'laser_scan_converter' build argument 'catkin_cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'laser_scan_converter' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.143s] DEBUG:colcon.colcon_core.verb:Building package 'laser_scan_converter' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter', 'merge_install': False, 'path': '/home/nithish/slam_hexapod_5th_jan/src/laser_scan_converter', 'symlink_install': False, 'test_result_base': None}
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'cmake_target' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.143s] DEBUG:colcon.colcon_core.verb:Building package 'realsense2_camera_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nithish/slam_hexapod_5th_jan/build/realsense2_camera_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs', 'merge_install': False, 'path': '/home/nithish/slam_hexapod_5th_jan/src/realsense2_camera_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_target' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_clean_cache' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_clean_first' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_force_configure' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'ament_cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'catkin_cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.143s] DEBUG:colcon.colcon_core.verb:Building package 'sllidar_ros2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2', 'merge_install': False, 'path': '/home/nithish/slam_hexapod_5th_jan/src/sllidar_ros2', 'symlink_install': False, 'test_result_base': None}
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'cmake_target' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'cmake_clean_cache' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'cmake_clean_first' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'cmake_force_configure' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'ament_cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'catkin_cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.144s] DEBUG:colcon.colcon_core.verb:Building package 'realsense2_camera' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nithish/slam_hexapod_5th_jan/build/realsense2_camera', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera', 'merge_install': False, 'path': '/home/nithish/slam_hexapod_5th_jan/src/realsense2_camera', 'symlink_install': False, 'test_result_base': None}
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'cmake_target' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.144s] DEBUG:colcon.colcon_core.verb:Building package 'realsense2_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nithish/slam_hexapod_5th_jan/build/realsense2_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description', 'merge_install': False, 'path': '/home/nithish/slam_hexapod_5th_jan/src/realsense2_description', 'symlink_install': False, 'test_result_base': None}
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'rtabmap_examples' build argument 'cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'rtabmap_examples' build argument 'cmake_target' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'rtabmap_examples' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'rtabmap_examples' build argument 'cmake_clean_cache' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'rtabmap_examples' build argument 'cmake_clean_first' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'rtabmap_examples' build argument 'cmake_force_configure' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'rtabmap_examples' build argument 'ament_cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'rtabmap_examples' build argument 'catkin_cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'rtabmap_examples' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.144s] DEBUG:colcon.colcon_core.verb:Building package 'rtabmap_examples' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nithish/slam_hexapod_5th_jan/build/rtabmap_examples', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples', 'merge_install': False, 'path': '/home/nithish/slam_hexapod_5th_jan/src/rtabmap_examples', 'symlink_install': False, 'test_result_base': None}
+[0.144s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.145s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.145s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/nithish/slam_hexapod_5th_jan/src/realsense2_camera_msgs' with build type 'ament_cmake'
+[0.146s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/nithish/slam_hexapod_5th_jan/src/realsense2_camera_msgs'
+[0.153s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.153s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.153s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.155s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_controller' with build type 'ament_python'
+[0.155s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_controller', 'ament_prefix_path')
+[0.155s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/hook/ament_prefix_path.ps1'
+[0.156s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/hook/ament_prefix_path.dsv'
+[0.156s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/hook/ament_prefix_path.sh'
+[0.156s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.156s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.158s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_description' with build type 'ament_cmake'
+[0.158s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_description'
+[0.158s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.158s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.160s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_firmware' with build type 'ament_cmake'
+[0.160s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_firmware'
+[0.160s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.160s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.161s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_mapping' with build type 'ament_python'
+[0.161s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_mapping', 'ament_prefix_path')
+[0.161s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/share/hexapod_mapping/hook/ament_prefix_path.ps1'
+[0.162s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/share/hexapod_mapping/hook/ament_prefix_path.dsv'
+[0.162s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/share/hexapod_mapping/hook/ament_prefix_path.sh'
+[0.162s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.162s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.163s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_step_detection' with build type 'ament_python'
+[0.163s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_step_detection', 'ament_prefix_path')
+[0.164s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/hook/ament_prefix_path.ps1'
+[0.164s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/hook/ament_prefix_path.dsv'
+[0.164s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/hook/ament_prefix_path.sh'
+[0.165s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.165s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.166s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/nithish/slam_hexapod_5th_jan/src/laser_scan_converter' with build type 'ament_python'
+[0.166s] Level 1:colcon.colcon_core.shell:create_environment_hook('laser_scan_converter', 'ament_prefix_path')
+[0.166s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/share/laser_scan_converter/hook/ament_prefix_path.ps1'
+[0.166s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/share/laser_scan_converter/hook/ament_prefix_path.dsv'
+[0.166s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/share/laser_scan_converter/hook/ament_prefix_path.sh'
+[0.167s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.167s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.168s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/nithish/slam_hexapod_5th_jan/src/sllidar_ros2' with build type 'ament_cmake'
+[0.168s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/nithish/slam_hexapod_5th_jan/src/sllidar_ros2'
+[0.168s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.168s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.174s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/realsense2_camera_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/realsense2_camera_msgs -- -j12 -l12
+[0.314s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_controller'
+[0.314s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.314s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.319s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/hexapod_description -- -j12 -l12
+[0.323s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware -- -j12 -l12
+[0.474s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_mapping'
+[0.475s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.475s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.611s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_step_detection'
+[0.612s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.612s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.767s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/nithish/slam_hexapod_5th_jan/src/laser_scan_converter'
+[0.768s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.768s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.775s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2 -- -j12 -l12
+[0.781s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/hexapod_description -- -j12 -l12
+[0.785s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/hexapod_description
+[0.785s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware -- -j12 -l12
+[0.787s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware
+[0.787s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/realsense2_camera_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/realsense2_camera_msgs -- -j12 -l12
+[0.789s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/realsense2_camera_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/realsense2_camera_msgs
+[0.803s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hexapod_description)
+[0.818s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/hexapod_description
+[0.822s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description' for CMake module files
+[0.823s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description' for CMake config files
+[0.823s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_description', 'cmake_prefix_path')
+[0.824s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/hook/cmake_prefix_path.ps1'
+[0.824s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/hook/cmake_prefix_path.dsv'
+[0.825s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/hook/cmake_prefix_path.sh'
+[0.826s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/bin'
+[0.826s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/lib/pkgconfig/hexapod_description.pc'
+[0.826s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/lib/python3.10/site-packages'
+[0.826s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/bin'
+[0.827s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/package.ps1'
+[0.828s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/package.dsv'
+[0.828s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/package.sh'
+[0.829s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/package.bash'
+[0.830s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/package.zsh'
+[0.831s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/colcon-core/packages/hexapod_description)
+[0.832s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hexapod_description)
+[0.832s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description' for CMake module files
+[0.833s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description' for CMake config files
+[0.834s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_description', 'cmake_prefix_path')
+[0.834s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/hook/cmake_prefix_path.ps1'
+[0.835s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/hook/cmake_prefix_path.dsv'
+[0.835s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/hook/cmake_prefix_path.sh'
+[0.836s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/bin'
+[0.836s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/lib/pkgconfig/hexapod_description.pc'
+[0.836s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/lib/python3.10/site-packages'
+[0.836s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/bin'
+[0.837s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/package.ps1'
+[0.838s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/package.dsv'
+[0.838s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/package.sh'
+[0.839s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/package.bash'
+[0.840s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/hexapod_description/package.zsh'
+[0.841s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/hexapod_description/share/colcon-core/packages/hexapod_description)
+[0.843s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hexapod_firmware)
+[0.844s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware' for CMake module files
+[0.844s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/hexapod_firmware
+[0.845s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware' for CMake config files
+[0.845s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_firmware', 'cmake_prefix_path')
+[0.845s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/hook/cmake_prefix_path.ps1'
+[0.846s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/hook/cmake_prefix_path.dsv'
+[0.847s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/hook/cmake_prefix_path.sh'
+[0.847s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib'
+[0.848s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/bin'
+[0.848s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib/pkgconfig/hexapod_firmware.pc'
+[0.848s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib/python3.10/site-packages'
+[0.848s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/bin'
+[0.849s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.ps1'
+[0.849s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.dsv'
+[0.850s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.sh'
+[0.852s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.bash'
+[0.856s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.zsh'
+[0.856s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/colcon-core/packages/hexapod_firmware)
+[0.857s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hexapod_firmware)
+[0.858s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware' for CMake module files
+[0.859s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware' for CMake config files
+[0.860s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_firmware', 'cmake_prefix_path')
+[0.860s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/hook/cmake_prefix_path.ps1'
+[0.862s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/hook/cmake_prefix_path.dsv'
+[0.863s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/hook/cmake_prefix_path.sh'
+[0.863s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib'
+[0.864s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/bin'
+[0.864s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib/pkgconfig/hexapod_firmware.pc'
+[0.864s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/lib/python3.10/site-packages'
+[0.864s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/bin'
+[0.864s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.ps1'
+[0.865s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.dsv'
+[0.866s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.sh'
+[0.866s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.bash'
+[0.866s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/hexapod_firmware/package.zsh'
+[0.867s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/share/colcon-core/packages/hexapod_firmware)
+[0.868s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(realsense2_camera_msgs)
+[0.869s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs' for CMake module files
+[0.869s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/realsense2_camera_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/realsense2_camera_msgs
+[0.870s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs' for CMake config files
+[0.870s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera_msgs', 'cmake_prefix_path')
+[0.871s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.ps1'
+[0.872s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.dsv'
+[0.872s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.sh'
+[0.873s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib'
+[0.873s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera_msgs', 'ld_library_path_lib')
+[0.873s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.ps1'
+[0.874s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.dsv'
+[0.874s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.sh'
+[0.874s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/bin'
+[0.874s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib/pkgconfig/realsense2_camera_msgs.pc'
+[0.875s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib/python3.10/site-packages'
+[0.875s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/bin'
+[0.876s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.ps1'
+[0.876s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.dsv'
+[0.877s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.sh'
+[0.877s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.bash'
+[0.878s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.zsh'
+[0.879s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/colcon-core/packages/realsense2_camera_msgs)
+[0.880s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(realsense2_camera_msgs)
+[0.880s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs' for CMake module files
+[0.881s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs' for CMake config files
+[0.881s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera_msgs', 'cmake_prefix_path')
+[0.882s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.ps1'
+[0.882s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.dsv'
+[0.882s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.sh'
+[0.883s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib'
+[0.883s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera_msgs', 'ld_library_path_lib')
+[0.883s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.ps1'
+[0.884s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.dsv'
+[0.884s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.sh'
+[0.885s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/bin'
+[0.885s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib/pkgconfig/realsense2_camera_msgs.pc'
+[0.885s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib/python3.10/site-packages'
+[0.885s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/bin'
+[0.886s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.ps1'
+[0.886s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.dsv'
+[0.887s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.sh'
+[0.888s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.bash'
+[0.888s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.zsh'
+[0.888s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/share/colcon-core/packages/realsense2_camera_msgs)
+[0.890s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2 -- -j12 -l12
+[0.891s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2
+[0.891s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/nithish/slam_hexapod_5th_jan/src/realsense2_camera' with build type 'ament_cmake'
+[0.892s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/nithish/slam_hexapod_5th_jan/src/realsense2_camera'
+[0.892s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.892s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.895s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/nithish/slam_hexapod_5th_jan/src/realsense2_description' with build type 'ament_cmake'
+[0.895s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/nithish/slam_hexapod_5th_jan/src/realsense2_description'
+[0.895s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.896s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.907s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sllidar_ros2)
+[0.907s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2' for CMake module files
+[0.908s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2' for CMake config files
+[0.911s] Level 1:colcon.colcon_core.shell:create_environment_hook('sllidar_ros2', 'cmake_prefix_path')
+[0.911s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.ps1'
+[0.913s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.dsv'
+[0.913s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/realsense2_camera': AMENT_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/realsense2_camera -- -j12 -l12
+[0.914s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.sh'
+[0.915s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/realsense2_description': AMENT_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/realsense2_description -- -j12 -l12
+[0.915s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/sllidar_ros2
+[0.915s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/lib'
+[0.916s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/bin'
+[0.916s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/lib/pkgconfig/sllidar_ros2.pc'
+[0.916s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/lib/python3.10/site-packages'
+[0.916s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/bin'
+[0.917s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/package.ps1'
+[0.917s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/package.dsv'
+[0.918s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/package.sh'
+[0.918s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/package.bash'
+[0.919s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/package.zsh'
+[0.919s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/colcon-core/packages/sllidar_ros2)
+[0.920s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sllidar_ros2)
+[0.920s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2' for CMake module files
+[0.921s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2' for CMake config files
+[0.921s] Level 1:colcon.colcon_core.shell:create_environment_hook('sllidar_ros2', 'cmake_prefix_path')
+[0.921s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.ps1'
+[0.922s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.dsv'
+[0.922s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.sh'
+[0.923s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/lib'
+[0.923s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/bin'
+[0.923s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/lib/pkgconfig/sllidar_ros2.pc'
+[0.924s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/lib/python3.10/site-packages'
+[0.924s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/bin'
+[0.924s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/package.ps1'
+[0.925s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/package.dsv'
+[0.925s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/package.sh'
+[0.926s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/package.bash'
+[0.926s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/sllidar_ros2/package.zsh'
+[0.927s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/sllidar_ros2/share/colcon-core/packages/sllidar_ros2)
+[0.956s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/realsense2_description' returned '0': AMENT_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/realsense2_description -- -j12 -l12
+[0.957s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/realsense2_description': AMENT_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/realsense2_description
+[0.969s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(realsense2_description)
+[0.969s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description' for CMake module files
+[0.971s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description' for CMake config files
+[0.972s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/realsense2_description' returned '0': AMENT_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/realsense2_description
+[0.972s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_description', 'cmake_prefix_path')
+[0.973s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.ps1'
+[0.973s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.dsv'
+[0.974s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.sh'
+[0.975s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/bin'
+[0.975s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/lib/pkgconfig/realsense2_description.pc'
+[0.975s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/lib/python3.10/site-packages'
+[0.975s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/bin'
+[0.976s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/package.ps1'
+[0.977s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/package.dsv'
+[0.977s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/package.sh'
+[0.978s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/package.bash'
+[0.978s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/package.zsh'
+[0.979s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/colcon-core/packages/realsense2_description)
+[0.980s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(realsense2_description)
+[0.980s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description' for CMake module files
+[0.981s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description' for CMake config files
+[0.981s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_description', 'cmake_prefix_path')
+[0.981s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.ps1'
+[0.982s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.dsv'
+[0.982s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.sh'
+[0.983s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/bin'
+[0.983s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/lib/pkgconfig/realsense2_description.pc'
+[0.983s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/lib/python3.10/site-packages'
+[0.983s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/bin'
+[0.984s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/package.ps1'
+[0.984s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/package.dsv'
+[0.985s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/package.sh'
+[0.985s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/package.bash'
+[0.986s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/realsense2_description/package.zsh'
+[0.986s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/realsense2_description/share/colcon-core/packages/realsense2_description)
+[1.007s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/realsense2_camera' returned '0': AMENT_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/realsense2_camera -- -j12 -l12
+[1.009s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/realsense2_camera': AMENT_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/realsense2_camera
+[1.023s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(realsense2_camera)
+[1.024s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera' for CMake module files
+[1.026s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/realsense2_camera' returned '0': AMENT_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/realsense2_camera
+[1.026s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera' for CMake config files
+[1.027s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera', 'cmake_prefix_path')
+[1.027s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/hook/cmake_prefix_path.ps1'
+[1.027s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/hook/cmake_prefix_path.dsv'
+[1.028s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/hook/cmake_prefix_path.sh'
+[1.028s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/lib'
+[1.028s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera', 'ld_library_path_lib')
+[1.029s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/hook/ld_library_path_lib.ps1'
+[1.029s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/hook/ld_library_path_lib.dsv'
+[1.030s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/hook/ld_library_path_lib.sh'
+[1.030s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/bin'
+[1.030s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/lib/pkgconfig/realsense2_camera.pc'
+[1.030s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/lib/python3.10/site-packages'
+[1.031s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/bin'
+[1.031s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/package.ps1'
+[1.031s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/package.dsv'
+[1.032s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/package.sh'
+[1.032s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/package.bash'
+[1.033s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/package.zsh'
+[1.033s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/colcon-core/packages/realsense2_camera)
+[1.034s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(realsense2_camera)
+[1.034s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera' for CMake module files
+[1.035s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera' for CMake config files
+[1.035s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera', 'cmake_prefix_path')
+[1.035s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/hook/cmake_prefix_path.ps1'
+[1.036s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/hook/cmake_prefix_path.dsv'
+[1.036s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/hook/cmake_prefix_path.sh'
+[1.036s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/lib'
+[1.037s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera', 'ld_library_path_lib')
+[1.037s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/hook/ld_library_path_lib.ps1'
+[1.037s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/hook/ld_library_path_lib.dsv'
+[1.038s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/hook/ld_library_path_lib.sh'
+[1.038s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/bin'
+[1.038s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/lib/pkgconfig/realsense2_camera.pc'
+[1.038s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/lib/python3.10/site-packages'
+[1.039s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/bin'
+[1.039s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/package.ps1'
+[1.040s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/package.dsv'
+[1.040s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/package.sh'
+[1.041s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/package.bash'
+[1.041s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/realsense2_camera/package.zsh'
+[1.041s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/share/colcon-core/packages/realsense2_camera)
+[1.042s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/nithish/slam_hexapod_5th_jan/src/rtabmap_examples' with build type 'ament_cmake'
+[1.042s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/nithish/slam_hexapod_5th_jan/src/rtabmap_examples'
+[1.042s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.042s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.053s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/rtabmap_examples': AMENT_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera:/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera:/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/lib:/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/rtabmap_examples -- -j12 -l12
+[1.099s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/rtabmap_examples' returned '0': AMENT_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera:/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera:/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/lib:/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/nithish/slam_hexapod_5th_jan/build/rtabmap_examples -- -j12 -l12
+[1.101s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/build/rtabmap_examples': AMENT_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera:/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera:/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/lib:/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/rtabmap_examples
+[1.112s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rtabmap_examples)
+[1.113s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples' for CMake module files
+[1.113s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/build/rtabmap_examples' returned '0': AMENT_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera:/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera:/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera/lib:/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/nithish/slam_hexapod_5th_jan/build/rtabmap_examples
+[1.114s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples' for CMake config files
+[1.114s] Level 1:colcon.colcon_core.shell:create_environment_hook('rtabmap_examples', 'cmake_prefix_path')
+[1.114s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/hook/cmake_prefix_path.ps1'
+[1.115s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/hook/cmake_prefix_path.dsv'
+[1.115s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/hook/cmake_prefix_path.sh'
+[1.116s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/bin'
+[1.116s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/lib/pkgconfig/rtabmap_examples.pc'
+[1.116s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/lib/python3.10/site-packages'
+[1.116s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/bin'
+[1.117s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/package.ps1'
+[1.118s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/package.dsv'
+[1.118s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/package.sh'
+[1.118s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/package.bash'
+[1.119s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/package.zsh'
+[1.119s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/colcon-core/packages/rtabmap_examples)
+[1.120s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rtabmap_examples)
+[1.120s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples' for CMake module files
+[1.121s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples' for CMake config files
+[1.121s] Level 1:colcon.colcon_core.shell:create_environment_hook('rtabmap_examples', 'cmake_prefix_path')
+[1.121s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/hook/cmake_prefix_path.ps1'
+[1.122s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/hook/cmake_prefix_path.dsv'
+[1.122s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/hook/cmake_prefix_path.sh'
+[1.123s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/bin'
+[1.123s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/lib/pkgconfig/rtabmap_examples.pc'
+[1.123s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/lib/python3.10/site-packages'
+[1.123s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/bin'
+[1.124s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/package.ps1'
+[1.124s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/package.dsv'
+[1.125s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/package.sh'
+[1.125s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/package.bash'
+[1.126s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/rtabmap_examples/package.zsh'
+[1.126s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/rtabmap_examples/share/colcon-core/packages/rtabmap_examples)
+[1.164s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_mapping': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_mapping build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/install.log --single-version-externally-managed install_data
+[1.204s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_step_detection': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_step_detection build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/install.log --single-version-externally-managed install_data
+[1.381s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/src/laser_scan_converter': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/laser_scan_converter build --build-base /home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/build install --record /home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/install.log --single-version-externally-managed install_data
+[1.426s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_controller': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_controller build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/install.log --single-version-externally-managed install_data
+[1.585s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping' for CMake module files
+[1.586s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_mapping' returned '0': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_mapping build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/install.log --single-version-externally-managed install_data
+[1.586s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping' for CMake config files
+[1.587s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/lib'
+[1.587s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/bin'
+[1.587s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/lib/pkgconfig/hexapod_mapping.pc'
+[1.587s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/lib/python3.10/site-packages'
+[1.587s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_mapping', 'pythonpath')
+[1.588s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/share/hexapod_mapping/hook/pythonpath.ps1'
+[1.588s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/share/hexapod_mapping/hook/pythonpath.dsv'
+[1.588s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/share/hexapod_mapping/hook/pythonpath.sh'
+[1.589s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/bin'
+[1.589s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hexapod_mapping)
+[1.590s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/share/hexapod_mapping/package.ps1'
+[1.590s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/share/hexapod_mapping/package.dsv'
+[1.590s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/share/hexapod_mapping/package.sh'
+[1.591s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/share/hexapod_mapping/package.bash'
+[1.592s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/share/hexapod_mapping/package.zsh'
+[1.592s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/share/colcon-core/packages/hexapod_mapping)
+[1.802s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller' for CMake module files
+[1.803s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_controller' returned '0': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_controller build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/install.log --single-version-externally-managed install_data
+[1.803s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller' for CMake config files
+[1.804s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib'
+[1.804s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/bin'
+[1.804s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/pkgconfig/hexapod_controller.pc'
+[1.804s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages'
+[1.804s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_controller', 'pythonpath')
+[1.805s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/hook/pythonpath.ps1'
+[1.805s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/hook/pythonpath.dsv'
+[1.805s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/hook/pythonpath.sh'
+[1.806s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/bin'
+[1.806s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hexapod_controller)
+[1.806s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/package.ps1'
+[1.807s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/package.dsv'
+[1.807s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/package.sh'
+[1.808s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/package.bash'
+[1.808s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/package.zsh'
+[1.808s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/colcon-core/packages/hexapod_controller)
+[1.849s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter' for CMake module files
+[1.850s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter' for CMake config files
+[1.851s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/lib'
+[1.851s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/bin'
+[1.851s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/lib/pkgconfig/laser_scan_converter.pc'
+[1.851s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/lib/python3.10/site-packages'
+[1.851s] Level 1:colcon.colcon_core.shell:create_environment_hook('laser_scan_converter', 'pythonpath')
+[1.852s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/share/laser_scan_converter/hook/pythonpath.ps1'
+[1.852s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/share/laser_scan_converter/hook/pythonpath.dsv'
+[1.853s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/share/laser_scan_converter/hook/pythonpath.sh'
+[1.854s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/bin'
+[1.854s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(laser_scan_converter)
+[1.854s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/share/laser_scan_converter/package.ps1'
+[1.855s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/share/laser_scan_converter/package.dsv'
+[1.856s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/share/laser_scan_converter/package.sh'
+[1.857s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/share/laser_scan_converter/package.bash'
+[1.857s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/share/laser_scan_converter/package.zsh'
+[1.857s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/share/colcon-core/packages/laser_scan_converter)
+[1.858s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/src/laser_scan_converter' returned '0': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/laser_scan_converter build --build-base /home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/build install --record /home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/install.log --single-version-externally-managed install_data
+[1.860s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection' for CMake module files
+[1.860s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_step_detection' returned '0': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_step_detection build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/install.log --single-version-externally-managed install_data
+[1.861s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection' for CMake config files
+[1.861s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib'
+[1.861s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/bin'
+[1.861s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/pkgconfig/hexapod_step_detection.pc'
+[1.862s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages'
+[1.862s] Level 1:colcon.colcon_core.shell:create_environment_hook('hexapod_step_detection', 'pythonpath')
+[1.862s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/hook/pythonpath.ps1'
+[1.862s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/hook/pythonpath.dsv'
+[1.863s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/hook/pythonpath.sh'
+[1.863s] Level 1:colcon.colcon_core.environment:checking '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/bin'
+[1.863s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hexapod_step_detection)
+[1.863s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/package.ps1'
+[1.864s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/package.dsv'
+[1.864s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/package.sh'
+[1.864s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/package.bash'
+[1.865s] INFO:colcon.colcon_core.shell:Creating package script '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/package.zsh'
+[1.865s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/colcon-core/packages/hexapod_step_detection)
+[1.865s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.866s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.866s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.866s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.871s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.871s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.871s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.886s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.887s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/nithish/slam_hexapod_5th_jan/install/local_setup.ps1'
+[1.888s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/nithish/slam_hexapod_5th_jan/install/_local_setup_util_ps1.py'
+[1.890s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/nithish/slam_hexapod_5th_jan/install/setup.ps1'
+[1.891s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/nithish/slam_hexapod_5th_jan/install/local_setup.sh'
+[1.892s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/nithish/slam_hexapod_5th_jan/install/_local_setup_util_sh.py'
+[1.893s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/nithish/slam_hexapod_5th_jan/install/setup.sh'
+[1.894s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/nithish/slam_hexapod_5th_jan/install/local_setup.bash'
+[1.894s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/nithish/slam_hexapod_5th_jan/install/setup.bash'
+[1.895s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/nithish/slam_hexapod_5th_jan/install/local_setup.zsh'
+[1.896s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/nithish/slam_hexapod_5th_jan/install/setup.zsh'

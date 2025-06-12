@@ -1,0 +1,29 @@
+[4.721s] Invoking command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_controller': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_controller build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/install.log --single-version-externally-managed install_data
+[5.418s] /home/nithish/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[5.418s]   warnings.warn(msg)
+[5.817s] running egg_info
+[5.883s] writing ../../build/hexapod_controller/hexapod_controller.egg-info/PKG-INFO
+[5.884s] writing dependency_links to ../../build/hexapod_controller/hexapod_controller.egg-info/dependency_links.txt
+[5.885s] writing entry points to ../../build/hexapod_controller/hexapod_controller.egg-info/entry_points.txt
+[5.886s] writing requirements to ../../build/hexapod_controller/hexapod_controller.egg-info/requires.txt
+[5.887s] writing top-level names to ../../build/hexapod_controller/hexapod_controller.egg-info/top_level.txt
+[6.022s] reading manifest file '../../build/hexapod_controller/hexapod_controller.egg-info/SOURCES.txt'
+[6.027s] writing manifest file '../../build/hexapod_controller/hexapod_controller.egg-info/SOURCES.txt'
+[6.028s] running build
+[6.029s] running build_py
+[6.029s] copying hexapod_controller/serial_bridge.py -> /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/build/lib/hexapod_controller
+[6.031s] copying hexapod_controller/controllers.py -> /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/build/lib/hexapod_controller
+[6.032s] running install
+[6.048s] running install_lib
+[6.114s] copying /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/build/lib/hexapod_controller/controllers.py -> /home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller
+[6.117s] byte-compiling /home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller/controllers.py to controllers.cpython-310.pyc
+[6.120s] running install_data
+[6.122s] copying launch/controller.launch.py -> /home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/launch
+[6.122s] running install_egg_info
+[6.192s] removing '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[6.193s] Copying ../../build/hexapod_controller/hexapod_controller.egg-info to /home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller-0.0.0-py3.10.egg-info
+[6.196s] running install_scripts
+[6.714s] Installing joystick_mapper script to /home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/hexapod_controller
+[6.714s] Installing serial_bridge script to /home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/hexapod_controller
+[6.716s] writing list of installed files to '/home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/install.log'
+[6.881s] Invoked command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_controller' returned '0': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_controller build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/install.log --single-version-externally-managed install_data

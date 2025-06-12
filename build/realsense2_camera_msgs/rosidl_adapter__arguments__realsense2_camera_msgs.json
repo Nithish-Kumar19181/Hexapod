@@ -1,0 +1,10 @@
+{
+  "package_name": "realsense2_camera_msgs",
+  "non_idl_tuples": [
+    "/home/nithish/slam_hexapod_5th_jan/src/realsense2_camera_msgs:msg/IMUInfo.msg",
+    "/home/nithish/slam_hexapod_5th_jan/src/realsense2_camera_msgs:msg/Extrinsics.msg",
+    "/home/nithish/slam_hexapod_5th_jan/src/realsense2_camera_msgs:msg/Metadata.msg",
+    "/home/nithish/slam_hexapod_5th_jan/src/realsense2_camera_msgs:msg/RGBD.msg",
+    "/home/nithish/slam_hexapod_5th_jan/src/realsense2_camera_msgs:srv/DeviceInfo.srv"
+  ]
+}

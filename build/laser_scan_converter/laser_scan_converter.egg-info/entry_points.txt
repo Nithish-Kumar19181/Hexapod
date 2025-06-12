@@ -1,0 +1,2 @@
+[console_scripts]
+laser_scan_converter_node = laser_scan_converter.laser_scan_converter_node:main

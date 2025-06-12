@@ -1,0 +1,24 @@
+[4.069s] Invoking command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_step_detection': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_step_detection build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/install.log --single-version-externally-managed install_data
+[4.751s] /home/nithish/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[4.751s]   warnings.warn(msg)
+[5.147s] running egg_info
+[5.209s] writing ../../build/hexapod_step_detection/hexapod_step_detection.egg-info/PKG-INFO
+[5.211s] writing dependency_links to ../../build/hexapod_step_detection/hexapod_step_detection.egg-info/dependency_links.txt
+[5.212s] writing entry points to ../../build/hexapod_step_detection/hexapod_step_detection.egg-info/entry_points.txt
+[5.213s] writing requirements to ../../build/hexapod_step_detection/hexapod_step_detection.egg-info/requires.txt
+[5.214s] writing top-level names to ../../build/hexapod_step_detection/hexapod_step_detection.egg-info/top_level.txt
+[5.346s] reading manifest file '../../build/hexapod_step_detection/hexapod_step_detection.egg-info/SOURCES.txt'
+[5.351s] writing manifest file '../../build/hexapod_step_detection/hexapod_step_detection.egg-info/SOURCES.txt'
+[5.352s] running build
+[5.352s] running build_py
+[5.353s] running install
+[5.368s] running install_lib
+[5.434s] running install_data
+[5.435s] copying launch/hexapod_step_cycle.launch.py -> /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/launch
+[5.436s] running install_egg_info
+[5.502s] removing '/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages/hexapod_step_detection-0.0.0-py3.10.egg-info' (and everything under it)
+[5.504s] Copying ../../build/hexapod_step_detection/hexapod_step_detection.egg-info to /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages/hexapod_step_detection-0.0.0-py3.10.egg-info
+[5.507s] running install_scripts
+[6.020s] Installing publish_gyro script to /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/hexapod_step_detection
+[6.021s] writing list of installed files to '/home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/install.log'
+[6.211s] Invoked command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_step_detection' returned '0': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_step_detection build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/install.log --single-version-externally-managed install_data

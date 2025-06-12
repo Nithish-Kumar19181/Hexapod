@@ -1,0 +1,33 @@
+running egg_info
+creating ../../build/hexapod_step_detection/hexapod_step_detection.egg-info
+writing ../../build/hexapod_step_detection/hexapod_step_detection.egg-info/PKG-INFO
+writing dependency_links to ../../build/hexapod_step_detection/hexapod_step_detection.egg-info/dependency_links.txt
+writing entry points to ../../build/hexapod_step_detection/hexapod_step_detection.egg-info/entry_points.txt
+writing requirements to ../../build/hexapod_step_detection/hexapod_step_detection.egg-info/requires.txt
+writing top-level names to ../../build/hexapod_step_detection/hexapod_step_detection.egg-info/top_level.txt
+writing manifest file '../../build/hexapod_step_detection/hexapod_step_detection.egg-info/SOURCES.txt'
+reading manifest file '../../build/hexapod_step_detection/hexapod_step_detection.egg-info/SOURCES.txt'
+writing manifest file '../../build/hexapod_step_detection/hexapod_step_detection.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/build/lib/hexapod_step_detection
+copying hexapod_step_detection/publish_gyro.py -> /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/build/lib/hexapod_step_detection
+copying hexapod_step_detection/__init__.py -> /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/build/lib/hexapod_step_detection
+running install
+running install_lib
+creating /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages/hexapod_step_detection
+copying /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/build/lib/hexapod_step_detection/publish_gyro.py -> /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages/hexapod_step_detection
+copying /home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/build/lib/hexapod_step_detection/__init__.py -> /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages/hexapod_step_detection
+byte-compiling /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages/hexapod_step_detection/publish_gyro.py to publish_gyro.cpython-310.pyc
+byte-compiling /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages/hexapod_step_detection/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/ament_index/resource_index/packages
+copying resource/hexapod_step_detection -> /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/ament_index/resource_index/packages
+copying package.xml -> /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection
+creating /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/launch
+copying launch/hexapod_step_cycle.launch.py -> /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/share/hexapod_step_detection/launch
+running install_egg_info
+Copying ../../build/hexapod_step_detection/hexapod_step_detection.egg-info to /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages/hexapod_step_detection-0.0.0-py3.10.egg-info
+running install_scripts
+Installing publish_gyro script to /home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/hexapod_step_detection
+writing list of installed files to '/home/nithish/slam_hexapod_5th_jan/build/hexapod_step_detection/install.log'

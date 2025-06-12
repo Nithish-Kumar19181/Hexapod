@@ -1,0 +1,5 @@
+setuptools
+rclpy
+sensor_msgs
+cv_bridge
+depthimage_to_laserscan

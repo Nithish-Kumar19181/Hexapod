@@ -1,0 +1,22 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages",
+        "/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/lib/python3.10/site-packages",
+        "/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages",
+        "/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/lib/python3.10/site-packages",
+        "/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages",
+        "/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/nithish/slam_hexapod_5th_jan/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages",
+        "/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/lib/python3.10/site-packages",
+        "/home/nithish/slam_hexapod_5th_jan/install/hexapod_step_detection/lib/python3.10/site-packages",
+        "/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/lib/python3.10/site-packages",
+        "/home/nithish/slam_hexapod_5th_jan/install/hexapod_firmware/local/lib/python3.10/dist-packages",
+        "/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

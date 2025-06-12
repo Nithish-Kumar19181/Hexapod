@@ -1,0 +1,23 @@
+[2.452s] Invoking command in '/home/nithish/slam_hexapod_5th_jan/src/laser_scan_converter': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/laser_scan_converter build --build-base /home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/build install --record /home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/install.log --single-version-externally-managed install_data
+[2.872s] /home/nithish/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[2.872s]   warnings.warn(msg)
+[3.052s] running egg_info
+[3.096s] writing ../../build/laser_scan_converter/laser_scan_converter.egg-info/PKG-INFO
+[3.097s] writing dependency_links to ../../build/laser_scan_converter/laser_scan_converter.egg-info/dependency_links.txt
+[3.098s] writing entry points to ../../build/laser_scan_converter/laser_scan_converter.egg-info/entry_points.txt
+[3.098s] writing requirements to ../../build/laser_scan_converter/laser_scan_converter.egg-info/requires.txt
+[3.098s] writing top-level names to ../../build/laser_scan_converter/laser_scan_converter.egg-info/top_level.txt
+[3.189s] reading manifest file '../../build/laser_scan_converter/laser_scan_converter.egg-info/SOURCES.txt'
+[3.193s] writing manifest file '../../build/laser_scan_converter/laser_scan_converter.egg-info/SOURCES.txt'
+[3.193s] running build
+[3.194s] running build_py
+[3.195s] running install
+[3.205s] running install_lib
+[3.254s] running install_data
+[3.255s] running install_egg_info
+[3.297s] removing '/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/lib/python3.10/site-packages/laser_scan_converter-0.0.1-py3.10.egg-info' (and everything under it)
+[3.298s] Copying ../../build/laser_scan_converter/laser_scan_converter.egg-info to /home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/lib/python3.10/site-packages/laser_scan_converter-0.0.1-py3.10.egg-info
+[3.298s] running install_scripts
+[3.488s] Installing laser_scan_converter_node script to /home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/lib/laser_scan_converter
+[3.488s] writing list of installed files to '/home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/install.log'
+[3.539s] Invoked command in '/home/nithish/slam_hexapod_5th_jan/src/laser_scan_converter' returned '0': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/laser_scan_converter/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/laser_scan_converter build --build-base /home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/build install --record /home/nithish/slam_hexapod_5th_jan/build/laser_scan_converter/install.log --single-version-externally-managed install_data

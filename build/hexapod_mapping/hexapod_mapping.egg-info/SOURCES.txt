@@ -1,0 +1,15 @@
+package.xml
+setup.cfg
+setup.py
+../../build/hexapod_mapping/hexapod_mapping.egg-info/PKG-INFO
+../../build/hexapod_mapping/hexapod_mapping.egg-info/SOURCES.txt
+../../build/hexapod_mapping/hexapod_mapping.egg-info/dependency_links.txt
+../../build/hexapod_mapping/hexapod_mapping.egg-info/requires.txt
+../../build/hexapod_mapping/hexapod_mapping.egg-info/top_level.txt
+../../build/hexapod_mapping/hexapod_mapping.egg-info/zip-safe
+hexapod_mapping/__init__.py
+launch/mapping.launch.py
+resource/hexapod_mapping
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

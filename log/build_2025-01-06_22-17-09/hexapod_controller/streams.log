@@ -1,0 +1,23 @@
+[1.568s] Invoking command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_controller': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_controller build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/install.log --single-version-externally-managed install_data
+[1.836s] /home/nithish/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[1.836s]   warnings.warn(msg)
+[2.025s] running egg_info
+[2.051s] writing ../../build/hexapod_controller/hexapod_controller.egg-info/PKG-INFO
+[2.052s] writing dependency_links to ../../build/hexapod_controller/hexapod_controller.egg-info/dependency_links.txt
+[2.053s] writing entry points to ../../build/hexapod_controller/hexapod_controller.egg-info/entry_points.txt
+[2.053s] writing requirements to ../../build/hexapod_controller/hexapod_controller.egg-info/requires.txt
+[2.053s] writing top-level names to ../../build/hexapod_controller/hexapod_controller.egg-info/top_level.txt
+[2.093s] reading manifest file '../../build/hexapod_controller/hexapod_controller.egg-info/SOURCES.txt'
+[2.095s] writing manifest file '../../build/hexapod_controller/hexapod_controller.egg-info/SOURCES.txt'
+[2.095s] running build
+[2.096s] running build_py
+[2.096s] running install
+[2.101s] running install_lib
+[2.117s] running install_data
+[2.117s] running install_egg_info
+[2.133s] removing '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[2.134s] Copying ../../build/hexapod_controller/hexapod_controller.egg-info to /home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller-0.0.0-py3.10.egg-info
+[2.135s] running install_scripts
+[2.258s] Installing joystick_mapper script to /home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/hexapod_controller
+[2.258s] writing list of installed files to '/home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/install.log'
+[2.283s] Invoked command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_controller' returned '0': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_controller build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/install.log --single-version-externally-managed install_data

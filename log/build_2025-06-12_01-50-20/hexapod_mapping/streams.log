@@ -1,0 +1,21 @@
+[3.703s] Invoking command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_mapping': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_mapping build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/install.log --single-version-externally-managed install_data
+[4.351s] /home/nithish/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[4.351s]   warnings.warn(msg)
+[4.744s] running egg_info
+[4.809s] writing ../../build/hexapod_mapping/hexapod_mapping.egg-info/PKG-INFO
+[4.811s] writing dependency_links to ../../build/hexapod_mapping/hexapod_mapping.egg-info/dependency_links.txt
+[4.811s] writing requirements to ../../build/hexapod_mapping/hexapod_mapping.egg-info/requires.txt
+[4.813s] writing top-level names to ../../build/hexapod_mapping/hexapod_mapping.egg-info/top_level.txt
+[4.951s] reading manifest file '../../build/hexapod_mapping/hexapod_mapping.egg-info/SOURCES.txt'
+[4.953s] writing manifest file '../../build/hexapod_mapping/hexapod_mapping.egg-info/SOURCES.txt'
+[4.954s] running build
+[4.955s] running build_py
+[4.957s] running install
+[4.970s] running install_lib
+[5.039s] running install_data
+[5.039s] running install_egg_info
+[5.106s] removing '/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/lib/python3.10/site-packages/hexapod_mapping-0.0.0-py3.10.egg-info' (and everything under it)
+[5.108s] Copying ../../build/hexapod_mapping/hexapod_mapping.egg-info to /home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/lib/python3.10/site-packages/hexapod_mapping-0.0.0-py3.10.egg-info
+[5.111s] running install_scripts
+[5.640s] writing list of installed files to '/home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/install.log'
+[5.820s] Invoked command in '/home/nithish/slam_hexapod_5th_jan/src/hexapod_mapping' returned '0': PYTHONPATH=/home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nithish/slam_hexapod_5th_jan/install/hexapod_mapping/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_mapping build --build-base /home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/build install --record /home/nithish/slam_hexapod_5th_jan/build/hexapod_mapping/install.log --single-version-externally-managed install_data

@@ -1,0 +1,10 @@
+setup.py
+hexapod_firmware/__init__.py
+hexapod_firmware/info_transmitter.py
+hexapod_firmware/mpu6050_driver.py
+hexapod_firmware/simple_gyro_transmitter.py
+hexapod_firmware/simple_serial_transmitter.py
+hexapod_firmware.egg-info/PKG-INFO
+hexapod_firmware.egg-info/SOURCES.txt
+hexapod_firmware.egg-info/dependency_links.txt
+hexapod_firmware.egg-info/top_level.txt

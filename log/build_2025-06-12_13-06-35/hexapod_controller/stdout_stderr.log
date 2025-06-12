@@ -1,0 +1,25 @@
+/home/nithish/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+running egg_info
+writing ../../build/hexapod_controller/hexapod_controller.egg-info/PKG-INFO
+writing dependency_links to ../../build/hexapod_controller/hexapod_controller.egg-info/dependency_links.txt
+writing entry points to ../../build/hexapod_controller/hexapod_controller.egg-info/entry_points.txt
+writing requirements to ../../build/hexapod_controller/hexapod_controller.egg-info/requires.txt
+writing top-level names to ../../build/hexapod_controller/hexapod_controller.egg-info/top_level.txt
+reading manifest file '../../build/hexapod_controller/hexapod_controller.egg-info/SOURCES.txt'
+writing manifest file '../../build/hexapod_controller/hexapod_controller.egg-info/SOURCES.txt'
+running build
+running build_py
+copying hexapod_controller/serial_bridge.py -> /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/build/lib/hexapod_controller
+copying hexapod_controller/controllers.py -> /home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/build/lib/hexapod_controller
+running install
+running install_lib
+running install_data
+copying launch/controller.launch.py -> /home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/share/hexapod_controller/launch
+running install_egg_info
+removing '/home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/hexapod_controller/hexapod_controller.egg-info to /home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/python3.10/site-packages/hexapod_controller-0.0.0-py3.10.egg-info
+running install_scripts
+Installing joystick_mapper script to /home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/hexapod_controller
+Installing serial_bridge script to /home/nithish/slam_hexapod_5th_jan/install/hexapod_controller/lib/hexapod_controller
+writing list of installed files to '/home/nithish/slam_hexapod_5th_jan/build/hexapod_controller/install.log'
