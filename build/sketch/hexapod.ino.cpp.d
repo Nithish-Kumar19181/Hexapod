@@ -158,6 +158,7 @@
  /home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/inverse_kinematics.h \
  /home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/ellipse_generation.h \
  /home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/gait_generation.h \
+ /home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/servo_mapping.h \
  /home/nithish/Documents/Arduino/libraries/SCServo/src/SCServo.h \
  /home/nithish/Documents/Arduino/libraries/SCServo/src/SCSCL.h \
  /home/nithish/Documents/Arduino/libraries/SCServo/src/SCSerial.h \
