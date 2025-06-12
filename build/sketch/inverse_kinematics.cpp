@@ -90,27 +90,33 @@ void Translation(float positionMatrix[] , float tran_x , float tran_y , float tr
     positionMatrix[2] = positionMatrix[2] + tran_z ;
 }
 
-//  functions to get the rotation along X,Y,Z 
-void RotationZ(float positionMatrix[] , float thetaz)
-{
-    float rotationz[3][3] = {{cos(thetaz) , -sin(thetaz) ,0},
-                             {sin(thetaz) , cos(thetaz) , 0},
-                             {0           , 0           , 1}
-                            } ;
-    float result[3] = {0.0f, 0.0f, 0.0f} ;
 
-    for(int i=0 ; i<3 ; i++)
-    {
-        for(int j=0 ; j<3 ; j++)
-        {
-            result[i] += rotationz[i][j]*positionMatrix[j] ;
+void RotationZ(float positionMatrix[], float thetaz, float pivot[3])
+{
+    // Step 1: Translate to origin (relative to pivot)
+    float translated[3];
+    for (int i = 0; i < 3; i++) {
+        translated[i] = positionMatrix[i] - pivot[i];
+    }
+
+    float rotationz[3][3] = {
+        {cos(thetaz), -sin(thetaz), 0},
+        {sin(thetaz),  cos(thetaz), 0},
+        {0,            0,           1}
+    };
+
+    float result[3] = {0.0f, 0.0f, 0.0f};
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            result[i] += rotationz[i][j] * translated[j];
         }
     }
-    for (int i = 0; i < 3; i++) 
-    {
-        positionMatrix[i] = result[i];
+
+    for (int i = 0; i < 3; i++) {
+        positionMatrix[i] = result[i] + pivot[i];
     }
 }
+
 
 void RotationX(float positionMatrix[] , float thetax)
 {

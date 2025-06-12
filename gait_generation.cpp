@@ -20,7 +20,7 @@ float ShiftParams[6][2] = {{-5.25,9.093},
 
 bool isValidHeight(float h) 
 {
-    return h >= -20 && h <= -12;  // these are the valid height the bot can make
+    return h >= -24 && h <= -8;  // these are the valid height the bot can make
 }
 
 bool Stand(float height , float legAngles[6][3])
@@ -50,9 +50,9 @@ bool Stand(float height , float legAngles[6][3])
 bool WalkGait(float height , float legAngles[6][5][3] , float legAnglesLine[6][5][3], float Angle) 
 {
     bool all_legs_successful = true;
-    const int stride = 8;
+    const int stride = 7;
     const int numPoints = 5;
-    const float strideHeight = 5.5;
+    const float strideHeight = 7;
 
     float ellipsePoints[6][numPoints][3];
     float LinePoints[6][numPoints][3];
@@ -76,10 +76,18 @@ bool WalkGait(float height , float legAngles[6][5][3] , float legAnglesLine[6][5
         float yEnd   = y + (stride / 2) ;
         float startArr[] = { xStart, yStart, height };
         float EndArr[]   = { xEnd, yEnd, height };
-
-        RotationZ( startArr,Angle) ;
-        RotationZ( EndArr,Angle) ;
         
+        // Midpoint for rotation
+        float midPoint[3] = {
+            (startArr[0] + EndArr[0]) / 2.0f,
+            (startArr[1] + EndArr[1]) / 2.0f,
+            (startArr[2] + EndArr[2]) / 2.0f
+        };
+        
+        // Rotate around the midpoint
+        RotationZ(startArr, Angle, midPoint);
+        RotationZ(EndArr, Angle, midPoint);
+
         xStart = startArr[0];
         xEnd   = EndArr[0];
         yStart = startArr[1];
@@ -126,8 +134,8 @@ bool RotateHexa(float height , float RotateAngle , float legAngles[6][5][3] , fl
     {
         float xStart = StandParams[i][0];
         float yStart = StandParams[i][1];
-
-        RotationZ(StandParams[i], RotateAngle);
+        float pivot[] = {0, 0, 0}; 
+        RotationZ(StandParams[i], RotateAngle/2, pivot);
 
         float xEnd   = StandParams[i][0];
         float yEnd   = StandParams[i][1];

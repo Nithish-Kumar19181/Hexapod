@@ -48,9 +48,9 @@
         "-I/home/nithish/Documents/Arduino/libraries/SCServo/src",
         "@/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/build_opt.h",
         "@/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/file_opts",
-        "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/hexapod.ino.cpp",
+        "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/inverse_kinematics.cpp",
         "-o",
-        "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/hexapod.ino.cpp.o"
+        "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/build/sketch/inverse_kinematics.cpp.o"
       ],
       "defines": [
         "F_CPU=240000000L",

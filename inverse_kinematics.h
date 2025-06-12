@@ -6,7 +6,7 @@ bool inverseKinematics(float positionMatrix[3] , float positionShift[2], float j
 
 void Translation(float positionMatrix[] , float tran_x , float tran_y , float tran_z) ;
 
-void RotationZ(float positionMatrix[] , float thetaz) ;
+void RotationZ(float positionMatrix[], float thetaz, float pivot[3]) ;
 
 void RotationX(float positionMatrix[] , float thetax) ;
 

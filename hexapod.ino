@@ -12,9 +12,10 @@ SCSCL sc;
 
 int baseIDs[6] = {3, 18, 15, 12, 9, 6};
 float height = -14.0;
-const float maxHeight = -20.0;
-const float minHeight = -14.0;
+const float maxHeight = -29.0;
+const float minHeight = -5;
 float RotateAngle = 0.0f; 
+float Angle = 0.0f;
 
 float JointAngles[6][3];
 float JointAnglesLine[6][3];
@@ -45,7 +46,7 @@ void loop() {
     }
 
     else if (currentMode == WALK) {
-        if (WalkGait(height, walkAngles, walkAnglesLine))
+        if (WalkGait(height, walkAngles, walkAnglesLine, Angle))
         {
             moveLegWalk(walkAngles,walkAnglesLine);
         } 
@@ -113,16 +114,16 @@ void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3])
                 mapServoAngles(baseID_line, jointAnglesLine[i][4-step], jointAngles_mapped_line);
             }
 
-            sc.RegWritePos(baseID,     (int)jointAngles_mapped[0], 0, 500);
-            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped[1], 0, 500);
-            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped[2], 0, 500);
+            sc.RegWritePos(baseID,     (int)jointAngles_mapped[0], 0, 700);
+            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped[1], 0, 700);
+            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped[2], 0, 700);
 
-            sc.RegWritePos(baseID_line,     (int)jointAngles_mapped_line[0], 0, 500);
-            sc.RegWritePos(baseID_line - 1, (int)jointAngles_mapped_line[1], 0, 500);
-            sc.RegWritePos(baseID_line - 2, (int)jointAngles_mapped_line[2], 0, 500);
+            sc.RegWritePos(baseID_line,     (int)jointAngles_mapped_line[0], 0, 700);
+            sc.RegWritePos(baseID_line - 1, (int)jointAngles_mapped_line[1], 0, 700);
+            sc.RegWritePos(baseID_line - 2, (int)jointAngles_mapped_line[2], 0, 700);
 
             sc.RegWriteAction() ;
-            delay(50);
+            delay(60);
         }
     }
 
@@ -147,16 +148,16 @@ void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3])
                 mapServoAngles(baseID_line, jointAngles[i][step], jointAngles_mapped);
             }
 
-            sc.RegWritePos(baseID,     (int)jointAngles_mapped_line[0], 0, 500);
-            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped_line[1], 0, 500);
-            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped_line[2], 0, 500);
+            sc.RegWritePos(baseID,     (int)jointAngles_mapped_line[0], 0, 700);
+            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped_line[1], 0, 700);
+            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped_line[2], 0, 700);
 
-            sc.RegWritePos(baseID_line,     (int)jointAngles_mapped[0], 0, 500);
-            sc.RegWritePos(baseID_line - 1, (int)jointAngles_mapped[1], 0, 500);
-            sc.RegWritePos(baseID_line - 2, (int)jointAngles_mapped[2], 0, 500);
+            sc.RegWritePos(baseID_line,     (int)jointAngles_mapped[0], 0, 700);
+            sc.RegWritePos(baseID_line - 1, (int)jointAngles_mapped[1], 0, 700);
+            sc.RegWritePos(baseID_line - 2, (int)jointAngles_mapped[2], 0, 700);
 
             sc.RegWriteAction() ;
-            delay(50);
+            delay(60);
         }
     }
 }
@@ -175,6 +176,12 @@ void handleSerialInput() {
             case 'w':
                 if (currentMode == STAND) {
                     currentMode = WALK;
+                    if(Serial.available()) 
+                        {
+                            Angle = Serial.parseFloat();
+                        }
+                    else{Angle = 0;}
+                    // float Angle = Serial.parseFloat();
                     Serial.println("Mode: WALK (Tripod gait)");
                 } else {
                     Serial.println("Start walking only from STAND mode.");
