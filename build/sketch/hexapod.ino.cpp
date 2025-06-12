@@ -11,6 +11,8 @@
 
 SCSCL sc;
 
+ bool stopWalkFlag = false; 
+
 int baseIDs[6] = {3, 18, 15, 12, 9, 6};
 float height = -14.0;
 const float maxHeight = -29.0;
@@ -29,24 +31,25 @@ float rotateAnglesLine[6][5][3] ;
 enum BotMode { IDLE, STAND, WALK, ROTATE };
 BotMode currentMode = IDLE;
 
-#line 31 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 33 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void setup();
-#line 37 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 39 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void loop();
-#line 71 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 87 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void moveLegStand(float jointAngles[6][3]);
-#line 89 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 105 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3]);
-#line 166 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 181 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void handleSerialInput();
-#line 31 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 33 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void setup() {
     Serial.begin(115200);
     sc.pSerial = &Serial1;
     Serial1.begin(1000000, SERIAL_8N1, S_RXD, S_TXD);
 }
 
-void loop() {
+void loop() 
+{
     handleSerialInput();
 
     if (currentMode == STAND) {
@@ -58,28 +61,41 @@ void loop() {
     }
 
     else if (currentMode == WALK) {
-        if (WalkGait(height, walkAngles, walkAnglesLine, Angle))
-        {
-            moveLegWalk(walkAngles,walkAnglesLine);
-        } 
-        else {
-            Serial.println("WalkGait IK failed.");
+        if (stopWalkFlag) {
+            currentMode = STAND; // Interrupt to STAND
+            stopWalkFlag = false; // Reset flag
+            Serial.println("Walk interrupted. Mode: STAND");
+        } else {
+            if (WalkGait(height, walkAngles, walkAnglesLine, Angle)) {
+                moveLegWalk(walkAngles, walkAnglesLine);
+                // If walk cycle completes naturally, return to STAND
+                currentMode = STAND; 
+            } else {
+                Serial.println("WalkGait IK failed.");
+                currentMode = STAND; // Revert to stand on failure
+            }
         }
-        currentMode = STAND;  // Return to STAND after 1 walk cycle
     }
 
     else if (currentMode == ROTATE) {
-        if (RotateHexa(height , RotateAngle , rotateAngles , rotateAnglesLine))
-        {
-            Serial.println(RotateAngle) ;
-            moveLegWalk(rotateAngles,rotateAnglesLine);
-        } 
-        else {
-            Serial.println("Rotate IK failed.");
+        if (stopWalkFlag) { // Assuming 'o' can also interrupt rotate if desired
+            currentMode = STAND;
+            stopWalkFlag = false;
+            Serial.println("Rotate interrupted. Mode: STAND");
+        } else {
+            if (RotateHexa(height, RotateAngle, rotateAngles, rotateAnglesLine)) {
+                Serial.println(RotateAngle);
+                moveLegWalk(rotateAngles, rotateAnglesLine);
+                // If rotate cycle completes naturally, return to STAND
+                currentMode = STAND;
+            } else {
+                Serial.println("Rotate IK failed.");
+                currentMode = STAND; // Revert to stand on failure
+            }
         }
-        currentMode = STAND;  // Return to STAND after 1 walk cycle
     }
 }
+
 void moveLegStand(float jointAngles[6][3]) {
     float jointAngles_mapped[3];
 
@@ -174,74 +190,106 @@ void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3])
     }
 }
 
-
 void handleSerialInput() {
     if (Serial.available()) {
-        char cmd = Serial.read();
+        char cmd_char = Serial.peek(); // Peek to check the first character
 
-        switch (cmd) {
-            case 's':
-                currentMode = STAND;
-                Serial.println("Mode: STAND");
-                break;
-
-            case 'w':
-                if (currentMode == STAND) {
-                    currentMode = WALK;
-                    if(Serial.available()) 
-                        {
-                            Angle = Serial.parseFloat();
-                        }
-                    else{Angle = 0;}
-                    // float Angle = Serial.parseFloat();
-                    Serial.println("Mode: WALK (Tripod gait)");
-                } else {
-                    Serial.println("Start walking only from STAND mode.");
+        if (cmd_char == 'w' || cmd_char == 'r') {
+            // Read the full command if it's 'w' or 'r'
+            char cmd = Serial.read(); // Consume 'w' or 'r'
+            if (Serial.available()) {
+                // Clear any lingering characters before the float to ensure fresh read
+                while (Serial.available() && !isDigit(Serial.peek()) && Serial.peek() != '-' && Serial.peek() != '.') {
+                    Serial.read(); 
                 }
-                break;
+                float received_value = Serial.parseFloat(); // This will read until a non-float char or timeout
 
-            case 'r':
-            if (currentMode == STAND) {
-                currentMode = ROTATE;
-                if(Serial.available()) {
-                    RotateAngle = Serial.parseFloat();
+                if (cmd == 'w') {
+                    if (currentMode == STAND || currentMode == WALK) {
+                        currentMode = WALK;
+                        Angle = received_value;
+                        stopWalkFlag = false; // Ensure walk continues
+                        Serial.print("Mode: WALK (Tripod gait), Angle: ");
+                        Serial.println(Angle);
+                    } else {
+                        Serial.println("Start walking only from STAND or WALK mode.");
+                    }
+                } else { // cmd == 'r'
+                    if (currentMode == STAND || currentMode == ROTATE) {
+                        currentMode = ROTATE;
+                        RotateAngle = received_value;
+                        stopWalkFlag = false; // Ensure rotate continues
+                        Serial.print("Mode: ROTATE (Tripod gait), Angle: ");
+                        Serial.println(RotateAngle);
+                    } else {
+                        Serial.println("Start rotating only from STAND or ROTATE mode.");
+                    }
                 }
-                float RotateAngle = Serial.parseFloat();
-                Serial.println("Mode: Rotate (Tripod gait)");
             } else {
-                Serial.println("Start rotating only from STAND mode.");
+                Serial.print("Command '");
+                Serial.print(cmd);
+                Serial.println("' received without argument. Ignoring.");
             }
-            break;
+        } else {
+            // Handle single character commands (s, h, d, o, L, A etc.)
+            char cmd = Serial.read(); 
 
-            case 'h':
-                if (currentMode == STAND && height > maxHeight) {
-                    height -= 0.3;
-                    Serial.print("Increased height to: ");
-                    Serial.println(-height);
-                } else if (currentMode != STAND) {
-                    Serial.println("Height change only allowed in STAND mode.");
-                } else {
-                    Serial.println("Max height reached.");
-                }
-                break;
+            switch (cmd) {
+                case 's':
+                    currentMode = STAND;
+                    stopWalkFlag = true;
+                    Serial.println("Mode: STAND");
+                    break;
 
-            case 'd':
-                if (currentMode == STAND && height < minHeight) {
-                    height += 0.3;
-                    Serial.print("Decreased height to: ");
-                    Serial.println(-height);
-                } else if (currentMode != STAND) {
-                    Serial.println("Height change only allowed in STAND mode.");
-                } else {
-                    Serial.println("Min height reached.");
-                }
-                break;
+                case 'o':
+                    stopWalkFlag = true;
+                    Serial.println("Command: HALT/PAUSE (o)");
+                    break;
+                
+                case 'h':
+                    if (currentMode == STAND && height < maxHeight) { 
+                        height += 0.3; 
+                        Serial.print("Increased height to: ");
+                        Serial.println(height); 
+                    } else if (currentMode != STAND) {
+                        Serial.println("Height change only allowed in STAND mode.");
+                    } else {
+                        Serial.println("Max height reached.");
+                    }
+                    break;
 
-            default:
-                Serial.print("Unknown command: ");
-                Serial.println(cmd);
-                break;
+                case 'd':
+                    if (currentMode == STAND && height > minHeight) { 
+                        height -= 0.3; 
+                        Serial.print("Decreased height to: ");
+                        Serial.println(height); 
+                    } else if (currentMode != STAND) {
+                        Serial.println("Height change only allowed in STAND mode.");
+                    } else {
+                        Serial.println("Min height reached.");
+                    }
+                    break;
+
+                case 'L': 
+                    char next_char = ' ';
+                    if (Serial.available()) {
+                        next_char = Serial.read(); // Read the next character
+                    }
+                    if (next_char == 'A') {
+                        Serial.println("Received: LA_combo");
+                        // Specific actions for LB + A combo
+                    } else {
+                        Serial.print("Unknown command: ");
+                        Serial.println(cmd);
+                        if (next_char != ' ') { 
+                            Serial.println(next_char);
+                        }
+                    }
+                    break;
+            }
+        }
+        while (Serial.available()) {
+            Serial.read();
         }
     }
 }
-
