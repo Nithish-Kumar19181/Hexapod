@@ -9,4 +9,7 @@ bool WalkGait(float height , float legAngles[6][5][3] , float legAnglesLine[6][5
 
 bool RotateHexa(float height , float RotateAngle , float legAngles[6][5][3] , float legAnglesLine[6][5][3]) ;
 
+bool Tilt(float height, float legAngles[6][3], float Angle) ;
+
+
 #endif

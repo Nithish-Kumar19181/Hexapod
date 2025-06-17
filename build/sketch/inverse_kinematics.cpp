@@ -91,9 +91,8 @@ void Translation(float positionMatrix[] , float tran_x , float tran_y , float tr
 }
 
 
-void RotationZ(float positionMatrix[], float thetaz, float pivot[3])
+void RotationZ(float positionMatrix[], float thetaz, float pivot[3])    
 {
-    // Step 1: Translate to origin (relative to pivot)
     float translated[3];
     for (int i = 0; i < 3; i++) {
         translated[i] = positionMatrix[i] - pivot[i];

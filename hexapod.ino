@@ -3,6 +3,7 @@
 #include "ellipse_generation.h"
 #include "gait_generation.h"
 #include "servo_mapping.h"
+#include "move_leg.h"
 #include <SCServo.h>
 
 #define S_RXD 18
@@ -11,6 +12,7 @@
 SCSCL sc;
 
  bool stopWalkFlag = false; 
+ float TiltAngle = 0.0f;
 
 int baseIDs[6] = {3, 18, 15, 12, 9, 6};
 float height = -14.0;
@@ -27,7 +29,7 @@ float rotateAngles[6][5][3] ;
 float rotateAnglesLine[6][5][3] ;
 
 
-enum BotMode { IDLE, STAND, WALK, ROTATE };
+enum BotMode { IDLE, STAND, WALK, ROTATE , TILT };
 BotMode currentMode = IDLE;
 
 void setup() {
@@ -50,130 +52,64 @@ void loop()
 
     else if (currentMode == WALK) {
         if (stopWalkFlag) {
-            currentMode = STAND; // Interrupt to STAND
-            stopWalkFlag = false; // Reset flag
+            currentMode = STAND; 
+            stopWalkFlag = false; 
             Serial.println("Walk interrupted. Mode: STAND");
         } else {
             if (WalkGait(height, walkAngles, walkAnglesLine, Angle)) {
                 moveLegWalk(walkAngles, walkAnglesLine);
-                // If walk cycle completes naturally, return to STAND
+
                 currentMode = STAND; 
             } else {
                 Serial.println("WalkGait IK failed.");
-                currentMode = STAND; // Revert to stand on failure
+                currentMode = STAND; 
             }
         }
     }
 
-    else if (currentMode == ROTATE) {
-        if (stopWalkFlag) { // Assuming 'o' can also interrupt rotate if desired
+    else if (currentMode == ROTATE) 
+    {
+        if (stopWalkFlag) { 
             currentMode = STAND;
             stopWalkFlag = false;
             Serial.println("Rotate interrupted. Mode: STAND");
-        } else {
+        } 
+        else 
+        {
             if (RotateHexa(height, RotateAngle, rotateAngles, rotateAnglesLine)) {
                 Serial.println(RotateAngle);
                 moveLegWalk(rotateAngles, rotateAnglesLine);
-                // If rotate cycle completes naturally, return to STAND
                 currentMode = STAND;
-            } else {
+            } 
+            else 
+            {
                 Serial.println("Rotate IK failed.");
-                currentMode = STAND; // Revert to stand on failure
+                currentMode = STAND; 
             }
         }
     }
-}
 
-void moveLegStand(float jointAngles[6][3]) {
-    float jointAngles_mapped[3];
-
-    for (int j = 0; j < 6; j++) 
+    else if (currentMode == TILT)
     {
-        int baseID = baseIDs[j];
-        mapServoAngles(baseID, jointAngles[j], jointAngles_mapped);
-
-        int pos1 = (int)jointAngles_mapped[0]; // Coxa
-        int pos2 = (int)jointAngles_mapped[1]; // Femur
-        int pos3 = (int)jointAngles_mapped[2]; // Tibia
-
-        sc.WritePos(baseID,     pos1, 0, 300);
-        sc.WritePos(baseID - 1, pos2, 0, 300);
-        sc.WritePos(baseID - 2, pos3, 0, 300);
-    }
-}
-
-void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3]) 
-{
-    float jointAngles_mapped[3];
-    float jointAngles_mapped_line[3];
-
-    int groupA[3] = {0, 2, 4};
-    int groupB[3] = {1, 3, 5};
-    
-    for (int step = 0; step < 5; step++) 
-    {
-        for (int k = 0; k < 3; k++) 
+        Serial.println("Tilt mode active");
+        delay(0);
+        if (stopWalkFlag) { 
+            currentMode = STAND;
+            stopWalkFlag = false;
+            Serial.println("Rotate interrupted. Mode: STAND");
+        } 
+        else 
         {
-            int i = groupB[k];
-            int j = groupA[k];
-            int baseID = baseIDs[j];
-            int baseID_line = baseIDs[i];
-
-            if(baseID == 15 || baseID_line == 12)
+            if(Tilt(height, JointAngles, TiltAngle))
             {
-                mapServoAngles(baseID, jointAngles[j][4-step], jointAngles_mapped);
-                mapServoAngles(baseID_line, jointAnglesLine[i][step], jointAngles_mapped_line);
+                moveLegStand(JointAngles);
+                currentMode = STAND;
             }
-            else
+            else 
             {
-                mapServoAngles(baseID, jointAngles[j][step], jointAngles_mapped);
-                mapServoAngles(baseID_line, jointAnglesLine[i][4-step], jointAngles_mapped_line);
+                Serial.println("Rotate IK failed.");
+                currentMode = STAND; 
             }
-
-            sc.RegWritePos(baseID,     (int)jointAngles_mapped[0], 0, 700);
-            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped[1], 0, 700);
-            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped[2], 0, 700);
-
-            sc.RegWritePos(baseID_line,     (int)jointAngles_mapped_line[0], 0, 700);
-            sc.RegWritePos(baseID_line - 1, (int)jointAngles_mapped_line[1], 0, 700);
-            sc.RegWritePos(baseID_line - 2, (int)jointAngles_mapped_line[2], 0, 700);
-
-            sc.RegWriteAction() ;
-            delay(60);
-        }
-    }
-
-    for (int step = 0; step < 5; step++) 
-    {
-        for (int k = 0; k < 3; k++) 
-        {
-            int i = groupB[k];
-            int j = groupA[k];
-            int baseID = baseIDs[j];
-            int baseID_line = baseIDs[i];
-
-            if(baseID == 15 || baseID_line == 12)
-            {
-                mapServoAngles(baseID, jointAnglesLine[j][step], jointAngles_mapped_line);
-                mapServoAngles(baseID_line, jointAngles[i][4-step], jointAngles_mapped);
-
-            }
-            else
-            {
-                mapServoAngles(baseID, jointAnglesLine[j][4-step], jointAngles_mapped_line);
-                mapServoAngles(baseID_line, jointAngles[i][step], jointAngles_mapped);
-            }
-
-            sc.RegWritePos(baseID,     (int)jointAngles_mapped_line[0], 0, 700);
-            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped_line[1], 0, 700);
-            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped_line[2], 0, 700);
-
-            sc.RegWritePos(baseID_line,     (int)jointAngles_mapped[0], 0, 700);
-            sc.RegWritePos(baseID_line - 1, (int)jointAngles_mapped[1], 0, 700);
-            sc.RegWritePos(baseID_line - 2, (int)jointAngles_mapped[2], 0, 700);
-
-            sc.RegWriteAction() ;
-            delay(60);
         }
     }
 }
@@ -182,11 +118,11 @@ void handleSerialInput() {
     if (Serial.available()) {
         char cmd_char = Serial.peek(); // Peek to check the first character
 
-        if (cmd_char == 'w' || cmd_char == 'r') {
-            // Read the full command if it's 'w' or 'r'
-            char cmd = Serial.read(); // Consume 'w' or 'r'
+        if (cmd_char == 'w' || cmd_char == 'r' || cmd_char == 't') 
+        {
+            char cmd = Serial.read(); 
             if (Serial.available()) {
-                // Clear any lingering characters before the float to ensure fresh read
+               
                 while (Serial.available() && !isDigit(Serial.peek()) && Serial.peek() != '-' && Serial.peek() != '.') {
                     Serial.read(); 
                 }
@@ -202,7 +138,9 @@ void handleSerialInput() {
                     } else {
                         Serial.println("Start walking only from STAND or WALK mode.");
                     }
-                } else { // cmd == 'r'
+                } 
+                else if (cmd == 'r')
+                { 
                     if (currentMode == STAND || currentMode == ROTATE) {
                         currentMode = ROTATE;
                         RotateAngle = received_value;
@@ -213,12 +151,34 @@ void handleSerialInput() {
                         Serial.println("Start rotating only from STAND or ROTATE mode.");
                     }
                 }
-            } else {
+
+                else if (cmd == 't') 
+                {
+                    if (currentMode == STAND || currentMode == TILT) {
+                        currentMode = TILT ;
+                        TiltAngle = received_value;
+                        stopWalkFlag = false; // Ensure rotate continues
+                        Serial.println(TiltAngle);
+                    } else {
+                        Serial.println("Height change only allowed in STAND mode.");
+                    }
+                } 
+                else 
+                {
+                    Serial.print("Unknown command: ");
+                    Serial.println(cmd);
+                }
+            } 
+
+            else
+            {
                 Serial.print("Command '");
                 Serial.print(cmd);
                 Serial.println("' received without argument. Ignoring.");
             }
-        } else {
+        } 
+        else 
+        {
             // Handle single character commands (s, h, d, o, L, A etc.)
             char cmd = Serial.read(); 
 
@@ -235,8 +195,8 @@ void handleSerialInput() {
                     break;
                 
                 case 'h':
-                    if (currentMode == STAND && height < maxHeight) { 
-                        height += 0.3; 
+                    if (currentMode == STAND && height > maxHeight) { 
+                        height -= 0.3; 
                         Serial.print("Increased height to: ");
                         Serial.println(height); 
                     } else if (currentMode != STAND) {
@@ -247,8 +207,8 @@ void handleSerialInput() {
                     break;
 
                 case 'd':
-                    if (currentMode == STAND && height > minHeight) { 
-                        height -= 0.3; 
+                    if (currentMode == STAND && height < minHeight) { 
+                        height += 0.3; 
                         Serial.print("Decreased height to: ");
                         Serial.println(height); 
                     } else if (currentMode != STAND) {
@@ -261,11 +221,10 @@ void handleSerialInput() {
                 case 'L': 
                     char next_char = ' ';
                     if (Serial.available()) {
-                        next_char = Serial.read(); // Read the next character
+                        next_char = Serial.read(); 
                     }
                     if (next_char == 'A') {
                         Serial.println("Received: LA_combo");
-                        // Specific actions for LB + A combo
                     } else {
                         Serial.print("Unknown command: ");
                         Serial.println(cmd);

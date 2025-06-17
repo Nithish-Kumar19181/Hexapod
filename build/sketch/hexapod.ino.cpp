@@ -12,6 +12,7 @@
 SCSCL sc;
 
  bool stopWalkFlag = false; 
+ float TiltAngle = 0.0f;
 
 int baseIDs[6] = {3, 18, 15, 12, 9, 6};
 float height = -14.0;
@@ -28,20 +29,20 @@ float rotateAngles[6][5][3] ;
 float rotateAnglesLine[6][5][3] ;
 
 
-enum BotMode { IDLE, STAND, WALK, ROTATE };
+enum BotMode { IDLE, STAND, WALK, ROTATE , TILT };
 BotMode currentMode = IDLE;
 
-#line 33 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 34 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void setup();
-#line 39 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 40 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void loop();
-#line 87 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 116 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void moveLegStand(float jointAngles[6][3]);
-#line 105 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 137 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3]);
-#line 181 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 213 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void handleSerialInput();
-#line 33 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 34 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void setup() {
     Serial.begin(115200);
     sc.pSerial = &Serial1;
@@ -62,33 +63,61 @@ void loop()
 
     else if (currentMode == WALK) {
         if (stopWalkFlag) {
-            currentMode = STAND; // Interrupt to STAND
-            stopWalkFlag = false; // Reset flag
+            currentMode = STAND; 
+            stopWalkFlag = false; 
             Serial.println("Walk interrupted. Mode: STAND");
         } else {
             if (WalkGait(height, walkAngles, walkAnglesLine, Angle)) {
                 moveLegWalk(walkAngles, walkAnglesLine);
-                // If walk cycle completes naturally, return to STAND
+
                 currentMode = STAND; 
             } else {
                 Serial.println("WalkGait IK failed.");
-                currentMode = STAND; // Revert to stand on failure
+                currentMode = STAND; 
             }
         }
     }
 
-    else if (currentMode == ROTATE) {
-        if (stopWalkFlag) { // Assuming 'o' can also interrupt rotate if desired
+    else if (currentMode == ROTATE) 
+    {
+        if (stopWalkFlag) { 
             currentMode = STAND;
             stopWalkFlag = false;
             Serial.println("Rotate interrupted. Mode: STAND");
-        } else {
+        } 
+        else 
+        {
             if (RotateHexa(height, RotateAngle, rotateAngles, rotateAnglesLine)) {
                 Serial.println(RotateAngle);
                 moveLegWalk(rotateAngles, rotateAnglesLine);
-                // If rotate cycle completes naturally, return to STAND
                 currentMode = STAND;
-            } else {
+            } 
+            else 
+            {
+                Serial.println("Rotate IK failed.");
+                currentMode = STAND; 
+            }
+        }
+    }
+
+    else if (currentMode == TILT)
+    {
+        Serial.println("Tilt mode active");
+        delay(0);
+        if (stopWalkFlag) { 
+            currentMode = STAND;
+            stopWalkFlag = false;
+            Serial.println("Rotate interrupted. Mode: STAND");
+        } 
+        else 
+        {
+            if(Tilt(height, JointAngles, TiltAngle))
+            {
+                moveLegStand(JointAngles);
+                currentMode = STAND;
+            }
+            else 
+            {
                 Serial.println("Rotate IK failed.");
                 currentMode = STAND; // Revert to stand on failure
             }
@@ -108,10 +137,13 @@ void moveLegStand(float jointAngles[6][3]) {
         int pos2 = (int)jointAngles_mapped[1]; // Femur
         int pos3 = (int)jointAngles_mapped[2]; // Tibia
 
-        sc.WritePos(baseID,     pos1, 0, 300);
-        sc.WritePos(baseID - 1, pos2, 0, 300);
-        sc.WritePos(baseID - 2, pos3, 0, 300);
+        sc.RegWritePos(baseID,     pos1, 0, 500);
+        sc.RegWritePos(baseID - 1, pos2, 0, 500);
+        sc.RegWritePos(baseID - 2, pos3, 0, 500);
+        
     }
+    sc.RegWriteAction() ;
+    delay(100); // Allow time for all servos to move
 }
 
 void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3]) 
@@ -151,7 +183,7 @@ void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3])
             sc.RegWritePos(baseID_line - 2, (int)jointAngles_mapped_line[2], 0, 700);
 
             sc.RegWriteAction() ;
-            delay(60);
+            delay(55);
         }
     }
 
@@ -185,7 +217,7 @@ void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3])
             sc.RegWritePos(baseID_line - 2, (int)jointAngles_mapped[2], 0, 700);
 
             sc.RegWriteAction() ;
-            delay(60);
+            delay(55);
         }
     }
 }
@@ -194,11 +226,11 @@ void handleSerialInput() {
     if (Serial.available()) {
         char cmd_char = Serial.peek(); // Peek to check the first character
 
-        if (cmd_char == 'w' || cmd_char == 'r') {
-            // Read the full command if it's 'w' or 'r'
-            char cmd = Serial.read(); // Consume 'w' or 'r'
+        if (cmd_char == 'w' || cmd_char == 'r' || cmd_char == 't') 
+        {
+            char cmd = Serial.read(); 
             if (Serial.available()) {
-                // Clear any lingering characters before the float to ensure fresh read
+               
                 while (Serial.available() && !isDigit(Serial.peek()) && Serial.peek() != '-' && Serial.peek() != '.') {
                     Serial.read(); 
                 }
@@ -214,7 +246,9 @@ void handleSerialInput() {
                     } else {
                         Serial.println("Start walking only from STAND or WALK mode.");
                     }
-                } else { // cmd == 'r'
+                } 
+                else if (cmd == 'r')
+                { 
                     if (currentMode == STAND || currentMode == ROTATE) {
                         currentMode = ROTATE;
                         RotateAngle = received_value;
@@ -225,12 +259,34 @@ void handleSerialInput() {
                         Serial.println("Start rotating only from STAND or ROTATE mode.");
                     }
                 }
-            } else {
+
+                else if (cmd == 't') 
+                {
+                    if (currentMode == STAND || currentMode == TILT) {
+                        currentMode = TILT ;
+                        TiltAngle = received_value;
+                        stopWalkFlag = false; // Ensure rotate continues
+                        Serial.println(TiltAngle);
+                    } else {
+                        Serial.println("Height change only allowed in STAND mode.");
+                    }
+                } 
+                else 
+                {
+                    Serial.print("Unknown command: ");
+                    Serial.println(cmd);
+                }
+            } 
+
+            else
+            {
                 Serial.print("Command '");
                 Serial.print(cmd);
                 Serial.println("' received without argument. Ignoring.");
             }
-        } else {
+        } 
+        else 
+        {
             // Handle single character commands (s, h, d, o, L, A etc.)
             char cmd = Serial.read(); 
 
@@ -247,8 +303,8 @@ void handleSerialInput() {
                     break;
                 
                 case 'h':
-                    if (currentMode == STAND && height < maxHeight) { 
-                        height += 0.3; 
+                    if (currentMode == STAND && height > maxHeight) { 
+                        height -= 0.3; 
                         Serial.print("Increased height to: ");
                         Serial.println(height); 
                     } else if (currentMode != STAND) {
@@ -259,8 +315,8 @@ void handleSerialInput() {
                     break;
 
                 case 'd':
-                    if (currentMode == STAND && height > minHeight) { 
-                        height -= 0.3; 
+                    if (currentMode == STAND && height < minHeight) { 
+                        height += 0.3; 
                         Serial.print("Decreased height to: ");
                         Serial.println(height); 
                     } else if (currentMode != STAND) {
