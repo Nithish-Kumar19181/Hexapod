@@ -2,11 +2,15 @@
 #define GAIT_GENERATION_H
 #include <Arduino.h>
 
+// MODIFICATION: Added a global constant for the number of gait points.
+#define NUM_POINTS 10
+
+// MODIFICATION: Updated function signatures to use the NUM_POINTS constant.
 bool Stand(float height , float legAngles[6][3]) ;
 
-bool WalkGait(float height , float legAngles[6][5][3] , float legAnglesLine[6][5][3], float Angle) ;
+bool WalkGait(float height , float legAngles[6][NUM_POINTS][3] , float legAnglesLine[6][NUM_POINTS][3], float Angle) ;
 
-bool RotateHexa(float height , float RotateAngle , float legAngles[6][5][3] , float legAnglesLine[6][5][3]) ;
+bool RotateHexa(float height , float RotateAngle , float legAngles[6][NUM_POINTS][3] , float legAnglesLine[6][NUM_POINTS][3]) ;
 
 bool Tilt(float height, float legAngles[6][3], float Angle) ;
 

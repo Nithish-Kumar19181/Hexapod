@@ -17,7 +17,7 @@ float getBaseAngleOffset(int baseServoID, float angle)
         case 15:
             return (angle / 2.0)+ 90 - 120;
         case 18:
-            return (angle / 2.0);
+            return (180.0 - angle) > 270 ? ((180.0 - angle) / 2.0) - 90 : ((180.0 - angle) / 2.0) + 90;
         default:
             return 0; // Or some safe fallback
     }

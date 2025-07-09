@@ -6,14 +6,12 @@
 #include "servo_mapping.h"
 #include <SCServo.h>
 
-#define S_RXD 18
-#define S_TXD 19
-
-SCSCL sc;
-
  bool stopWalkFlag = false; 
  float TiltAngle = 0.0f;
+#define S_RXD 18
+#define S_TXD 19 
 
+SCSCL sc;
 int baseIDs[6] = {3, 18, 15, 12, 9, 6};
 float height = -14.0;
 const float maxHeight = -29.0;
@@ -21,28 +19,29 @@ const float minHeight = -5;
 float RotateAngle = 0.0f; 
 float Angle = 0.0f;
 
+// MODIFICATION: Using NUM_POINTS constant for array declarations.
 float JointAngles[6][3];
 float JointAnglesLine[6][3];
-float walkAngles[6][5][3];  
-float walkAnglesLine[6][5][3]; 
-float rotateAngles[6][5][3] ; 
-float rotateAnglesLine[6][5][3] ;
+float walkAngles[6][NUM_POINTS][3];  
+float walkAnglesLine[6][NUM_POINTS][3]; 
+float rotateAngles[6][NUM_POINTS][3] ; 
+float rotateAnglesLine[6][NUM_POINTS][3] ;
 
 
 enum BotMode { IDLE, STAND, WALK, ROTATE , TILT };
 BotMode currentMode = IDLE;
 
-#line 34 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 33 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void setup();
-#line 40 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 39 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void loop();
 #line 116 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
-void moveLegStand(float jointAngles[6][3]);
-#line 137 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
-void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3]);
-#line 213 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void handleSerialInput();
-#line 34 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+#line 242 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+void moveLegStand(float jointAngles[6][3]);
+#line 264 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
+void moveLegWalk(float jointAngles[6][10][3], float jointAnglesLine[6][10][3]);
+#line 33 "/home/nithish/hexapod/Hexapod/hexapod_main/hexapod/hexapod/hexapod/hexapod/hexapod.ino"
 void setup() {
     Serial.begin(115200);
     sc.pSerial = &Serial1;
@@ -119,112 +118,16 @@ void loop()
             else 
             {
                 Serial.println("Rotate IK failed.");
-                currentMode = STAND; // Revert to stand on failure
+                currentMode = STAND; 
             }
         }
     }
 }
 
-void moveLegStand(float jointAngles[6][3]) {
-    float jointAngles_mapped[3];
-
-    for (int j = 0; j < 6; j++) 
-    {
-        int baseID = baseIDs[j];
-        mapServoAngles(baseID, jointAngles[j], jointAngles_mapped);
-
-        int pos1 = (int)jointAngles_mapped[0]; // Coxa
-        int pos2 = (int)jointAngles_mapped[1]; // Femur
-        int pos3 = (int)jointAngles_mapped[2]; // Tibia
-
-        sc.RegWritePos(baseID,     pos1, 0, 500);
-        sc.RegWritePos(baseID - 1, pos2, 0, 500);
-        sc.RegWritePos(baseID - 2, pos3, 0, 500);
-        
-    }
-    sc.RegWriteAction() ;
-    delay(100); // Allow time for all servos to move
-}
-
-void moveLegWalk(float jointAngles[6][5][3], float jointAnglesLine[6][5][3]) 
-{
-    float jointAngles_mapped[3];
-    float jointAngles_mapped_line[3];
-
-    int groupA[3] = {0, 2, 4};
-    int groupB[3] = {1, 3, 5};
-    
-    for (int step = 0; step < 5; step++) 
-    {
-        for (int k = 0; k < 3; k++) 
-        {
-            int i = groupB[k];
-            int j = groupA[k];
-            int baseID = baseIDs[j];
-            int baseID_line = baseIDs[i];
-
-            if(baseID == 15 || baseID_line == 12)
-            {
-                mapServoAngles(baseID, jointAngles[j][4-step], jointAngles_mapped);
-                mapServoAngles(baseID_line, jointAnglesLine[i][step], jointAngles_mapped_line);
-            }
-            else
-            {
-                mapServoAngles(baseID, jointAngles[j][step], jointAngles_mapped);
-                mapServoAngles(baseID_line, jointAnglesLine[i][4-step], jointAngles_mapped_line);
-            }
-
-            sc.RegWritePos(baseID,     (int)jointAngles_mapped[0], 0, 700);
-            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped[1], 0, 700);
-            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped[2], 0, 700);
-
-            sc.RegWritePos(baseID_line,     (int)jointAngles_mapped_line[0], 0, 700);
-            sc.RegWritePos(baseID_line - 1, (int)jointAngles_mapped_line[1], 0, 700);
-            sc.RegWritePos(baseID_line - 2, (int)jointAngles_mapped_line[2], 0, 700);
-
-            sc.RegWriteAction() ;
-            delay(55);
-        }
-    }
-
-    for (int step = 0; step < 5; step++) 
-    {
-        for (int k = 0; k < 3; k++) 
-        {
-            int i = groupB[k];
-            int j = groupA[k];
-            int baseID = baseIDs[j];
-            int baseID_line = baseIDs[i];
-
-            if(baseID == 15 || baseID_line == 12)
-            {
-                mapServoAngles(baseID, jointAnglesLine[j][step], jointAngles_mapped_line);
-                mapServoAngles(baseID_line, jointAngles[i][4-step], jointAngles_mapped);
-
-            }
-            else
-            {
-                mapServoAngles(baseID, jointAnglesLine[j][4-step], jointAngles_mapped_line);
-                mapServoAngles(baseID_line, jointAngles[i][step], jointAngles_mapped);
-            }
-
-            sc.RegWritePos(baseID,     (int)jointAngles_mapped_line[0], 0, 700);
-            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped_line[1], 0, 700);
-            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped_line[2], 0, 700);
-
-            sc.RegWritePos(baseID_line,     (int)jointAngles_mapped[0], 0, 700);
-            sc.RegWritePos(baseID_line - 1, (int)jointAngles_mapped[1], 0, 700);
-            sc.RegWritePos(baseID_line - 2, (int)jointAngles_mapped[2], 0, 700);
-
-            sc.RegWriteAction() ;
-            delay(55);
-        }
-    }
-}
-
+// This function's logic is untouched as requested.
 void handleSerialInput() {
     if (Serial.available()) {
-        char cmd_char = Serial.peek(); // Peek to check the first character
+        char cmd_char = Serial.peek(); 
 
         if (cmd_char == 'w' || cmd_char == 'r' || cmd_char == 't') 
         {
@@ -234,13 +137,13 @@ void handleSerialInput() {
                 while (Serial.available() && !isDigit(Serial.peek()) && Serial.peek() != '-' && Serial.peek() != '.') {
                     Serial.read(); 
                 }
-                float received_value = Serial.parseFloat(); // This will read until a non-float char or timeout
+                float received_value = Serial.parseFloat(); 
 
                 if (cmd == 'w') {
                     if (currentMode == STAND || currentMode == WALK) {
                         currentMode = WALK;
                         Angle = received_value;
-                        stopWalkFlag = false; // Ensure walk continues
+                        stopWalkFlag = false; 
                         Serial.print("Mode: WALK (Tripod gait), Angle: ");
                         Serial.println(Angle);
                     } else {
@@ -252,7 +155,7 @@ void handleSerialInput() {
                     if (currentMode == STAND || currentMode == ROTATE) {
                         currentMode = ROTATE;
                         RotateAngle = received_value;
-                        stopWalkFlag = false; // Ensure rotate continues
+                        stopWalkFlag = false; 
                         Serial.print("Mode: ROTATE (Tripod gait), Angle: ");
                         Serial.println(RotateAngle);
                     } else {
@@ -265,7 +168,7 @@ void handleSerialInput() {
                     if (currentMode == STAND || currentMode == TILT) {
                         currentMode = TILT ;
                         TiltAngle = received_value;
-                        stopWalkFlag = false; // Ensure rotate continues
+                        stopWalkFlag = false; 
                         Serial.println(TiltAngle);
                     } else {
                         Serial.println("Height change only allowed in STAND mode.");
@@ -287,7 +190,6 @@ void handleSerialInput() {
         } 
         else 
         {
-            // Handle single character commands (s, h, d, o, L, A etc.)
             char cmd = Serial.read(); 
 
             switch (cmd) {
@@ -329,11 +231,10 @@ void handleSerialInput() {
                 case 'L': 
                     char next_char = ' ';
                     if (Serial.available()) {
-                        next_char = Serial.read(); // Read the next character
+                        next_char = Serial.read(); 
                     }
                     if (next_char == 'A') {
                         Serial.println("Received: LA_combo");
-                        // Specific actions for LB + A combo
                     } else {
                         Serial.print("Unknown command: ");
                         Serial.println(cmd);
@@ -347,5 +248,119 @@ void handleSerialInput() {
         while (Serial.available()) {
             Serial.read();
         }
+    }
+}
+
+void moveLegStand(float jointAngles[6][3]) {
+    float jointAngles_mapped[3];
+
+    for (int j = 0; j < 6; j++) 
+    {
+        int baseID = baseIDs[j];
+        mapServoAngles(baseID, jointAngles[j], jointAngles_mapped);
+
+        int pos1 = (int)jointAngles_mapped[0]; // Coxa
+        int pos2 = (int)jointAngles_mapped[1]; // Femur
+        int pos3 = (int)jointAngles_mapped[2]; // Tibia
+
+        sc.RegWritePos(baseID,     pos1, 0, 500);
+        sc.RegWritePos(baseID - 1, pos2, 0, 500);
+        sc.RegWritePos(baseID - 2, pos3, 0, 500);
+        
+    }
+    sc.RegWriteAction() ;
+    delay(100); 
+}
+
+// MODIFICATION: The function signature and loops now use NUM_POINTS.
+void moveLegWalk(float jointAngles[6][NUM_POINTS][3], float jointAnglesLine[6][NUM_POINTS][3]) 
+{
+    float jointAngles_mapped[3];
+
+    int baseIDs[6] = {3, 18, 15, 12, 9, 6};
+
+    // MODIFICATION: Using NUM_POINTS in loop condition
+    for (int step = 0; step < NUM_POINTS; step++) 
+    {
+        for (int i = 0; i < 6; i++) 
+        {
+            int baseID = baseIDs[i];
+            float* angles;
+
+            if (i == 0 || i == 2 || i == 4) 
+            {
+                if (baseID == 15) 
+                {
+                    // MODIFICATION: Using (NUM_POINTS - 1) for reversal
+                    angles = jointAngles[i][(NUM_POINTS - 1) - step];
+                } 
+                else 
+                {
+                    angles = jointAngles[i][step];
+                }
+            }
+            else 
+            {
+                if (baseID == 12 ||baseID == 18) 
+                {
+                    angles = jointAnglesLine[i][step];
+                } 
+                else 
+                {
+                    // MODIFICATION: Using (NUM_POINTS - 1) for reversal
+                    angles = jointAnglesLine[i][(NUM_POINTS - 1) - step];
+                }
+            }
+
+            mapServoAngles(baseID, angles, jointAngles_mapped);
+            sc.RegWritePos(baseID,     (int)jointAngles_mapped[0], 0, 700);
+            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped[1], 0, 700);
+            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped[2], 0, 700);
+        }
+
+        sc.RegWriteAction();
+        delay(100);
+    }
+
+    // MODIFICATION: Using NUM_POINTS in loop condition
+    for (int step = 0; step < NUM_POINTS; step++) 
+    {
+        for (int i = 0; i < 6; i++) 
+        {
+            int baseID = baseIDs[i];
+            float* angles;
+            if (i == 1 || i == 3 || i == 5) 
+            {
+                if (baseID == 12  || baseID  == 18) 
+                {
+                    // MODIFICATION: Using (NUM_POINTS - 1) for reversal
+                    angles = jointAngles[i][(NUM_POINTS - 1) - step];
+                } 
+                else 
+                {
+                    angles = jointAngles[i][step];
+                }
+            }
+            else 
+            {
+                if (baseID == 15) 
+                {
+                angles = jointAnglesLine[i][step];
+                } 
+                else 
+                {
+                // MODIFICATION: Using (NUM_POINTS - 1) for reversal
+                angles = jointAnglesLine[i][(NUM_POINTS - 1) - step];
+                }
+            }
+
+            mapServoAngles(baseID, angles, jointAngles_mapped);
+            sc.RegWritePos(baseID,     (int)jointAngles_mapped[0], 0, 700);
+            sc.RegWritePos(baseID - 1, (int)jointAngles_mapped[1], 0, 700);
+            sc.RegWritePos(baseID - 2, (int)jointAngles_mapped[2], 0, 700);
+        }
+
+        sc.RegWriteAction();
+        delay(100);
     }
 }
